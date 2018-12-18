@@ -1,4 +1,7 @@
-# Logs
+#Logs
+.vscode
+.idea
+node_modules
 logs
 *.log
 npm-debug.log*
