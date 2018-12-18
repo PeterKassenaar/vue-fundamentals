@@ -19,6 +19,12 @@
                     <li class="list-group-item">{{ selectedCountry.id}}</li>
                     <li class="list-group-item">{{ selectedCountry.name}}</li>
                     <li class="list-group-item">{{ selectedCountry.capital}}</li>
+                    <li class="list-group-item">
+                        <img :src="getImgUrl(selectedCountry.img)"
+                             :alt="selectedCountry.img"
+                             class="img-fluid" >
+                    </li>
+
                     <li class="list-group-item">{{ selectedCountry.details}}</li>
                     <li class="list-group-item" v-if="isExpensive">
                         <span class="badge badge-danger badge-pill">Expensive!</span>
@@ -51,7 +57,11 @@
 		methods: {
 			selectCountry(country) {
 				this.selectedCountryIndex = this.data.countries.indexOf(country);
-			}
+			},
+            getImgUrl(img){
+				console.log(img);
+				return require('../assets/countries/' + img);
+            }
 		},
 		computed: {
 			selectedCountry() {
