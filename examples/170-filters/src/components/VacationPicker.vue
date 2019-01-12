@@ -1,3 +1,4 @@
+<!-- VacationPicker.vue - not used in this example -->
 <template>
     <div class="">
         <h1>
@@ -51,7 +52,6 @@
 
 	export default {
 		name: 'VacationPicker',
-        //**************** Data
 		data() {
 			return {
 				data,
@@ -59,7 +59,6 @@
 				currentCountryIndex: 0
 			}
 		},
-        //**************** Methods
 		methods: {
 			prevCountry: function () {
 				this.currentCountryIndex--;
@@ -78,7 +77,6 @@
 				return require('../assets/countries/' + img);
 			}
 		},
-        //**************** Computed properties
 		computed: {
 			selectedCountry() {
 				return {
