@@ -21,6 +21,7 @@
             </div>
             <div class="col-6">
                 <CountryDetail v-if="showDetails"
+                               :id="country.id"
                                :name="country.name"
                                :country="country" />
             </div>

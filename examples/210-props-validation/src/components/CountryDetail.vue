@@ -25,14 +25,23 @@
 	export default {
 		name: "CountryDetail",
 		props: {
+			// example props, including validation types
 			country: {
 				type: Object,
 				required: true
 			},
 			name: {
 				type:
-				String, required: true
-			}
+				String, required: true,
+			},
+            id:{
+				type: Number,
+                required:true,
+                validator:function (value) {
+					// validator function is executed *before* component is created
+                    return [1, 2, 3, 4, 5, 6].includes(value)
+				}
+            }
 		},
 		methods: {
 			getImgUrl(img) {
