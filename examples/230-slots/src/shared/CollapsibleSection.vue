@@ -5,7 +5,9 @@
             <span v-if="!open" @click="open = !open">&#x25BC; Expand</span>
         </div>
         <!--Injected content here-->
-        <slot v-if="open"></slot>
+        <transition name="fade">
+            <slot v-if="open"></slot>
+        </transition>
     </div>
 </template>
 
@@ -21,5 +23,10 @@
 </script>
 
 <style scoped>
-
+    .fade-enter-active, .fade-leave-active {
+        transition: opacity .5s;
+    }
+    .fade-enter, .fade-leave-to {
+        opacity: 0;
+    }
 </style>
