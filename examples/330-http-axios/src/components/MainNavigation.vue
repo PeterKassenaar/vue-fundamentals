@@ -20,12 +20,6 @@
                         <li class="nav-item">
                             <router-link to="/api" class="nav-link" exact>Country API</router-link>
                         </li>
-                        <li class="nav-item">
-                            <router-link to="add" class="nav-link" exact>Add Country</router-link>
-                        </li>
-                        <li class="nav-item">
-                            <router-link to="update" class="nav-link" exact>Update Country</router-link>
-                        </li>
                     </ul>
                 </div>
             </nav>

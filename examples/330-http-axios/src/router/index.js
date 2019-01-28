@@ -33,16 +33,6 @@ export default new Router({
 			path: '/api',
 			name: 'api',
 			component: ApiComponent
-		},
-		{
-			path: '/add',
-			name: 'add',
-			component: AddCountry
-		},
-		{
-			path: '/update',
-			name: 'update',
-			component: UpdateCountry
 		}
 	]
 })
