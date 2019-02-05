@@ -1,3 +1,4 @@
+<!--ApiVuexDetail.vue-->
 <template>
     <div v-if="country">
         <h2>Details for {{ country.name }} - directly from store</h2>
@@ -33,21 +34,36 @@
 </template>
 
 <script>
+    // import {mapGetters} from 'vuex';
+
     export default {
         name: "ApiVuexDetail",
         created() {
-            // call axios with the url, it returns a promise.
+            // get name from the url
             this.name = this.$route.params.name;
-
         },
         computed: {
             country() {
-               return this.$store.getters.getCountry(this.name);
+                return this.$store.getters.getCountry(this.name);
             }
+
+            // Using the mapGetters method, see https://vuex.vuejs.org/guide/getters.html#the-mapgetters-helper
+            // (not really profitable here, but it can be if you have a lot of getters)
+            // mix the getters into a computed property using the object spread operator
+            // ...mapGetters(['getCountry']),
+            // // computed property still needed, because the getter requires a parameter
+            // country(){
+            //     return this.getCountry(this.name)
+            // }
         }
     }
 </script>
 
 <style scoped>
-
+    .imgFlag {
+        max-width: 80px;
+        border: 1px solid gray;
+        border-radius: 8px;
+        margin-right: 4px;
+    }
 </style>

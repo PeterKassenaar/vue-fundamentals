@@ -7,10 +7,12 @@ Vue.use(Vuex);
 import axios from 'axios';
 
 const url = 'https://restcountries.eu/rest/v2/all';
+
 export default new Vuex.Store({
     state: {
         loadingStatus: 'notloading',
-        countries: []
+        countries: [],
+        errors: []
     },
     mutations: {
         SET_LOADING_STATUS(state, payload) {
@@ -21,6 +23,9 @@ export default new Vuex.Store({
         },
         CLEAR_COUNTRIES(state) {
             state.countries = []
+        },
+        ADD_ERROR(state, payload) {
+            state.errors = [...state.errors, payload]
         }
     },
     actions: {
@@ -33,18 +38,20 @@ export default new Vuex.Store({
                     context.commit('SET_LOADING_STATUS', 'notloading');
                     context.commit('SET_COUNTRIES', result.data);
                 })
-
+                .catch(err => {
+                    context.commit('SET_LOADING_STATUS', 'notloading');
+                    context.commit('SET_COUNTRIES', []);
+                    context.commit('ADD_ERROR', err);
+                })
         },
         clearCountries(context) {
             context.commit('CLEAR_COUNTRIES')
         }
     },
-    getters:{
+    getters: {
         // only return the requested country from the store
-        getCountry : (state) => (name) => {
+        getCountry: (state) => (name) => {
             return state.countries.find(c => c.name === name)
         }
     }
-
-
 })
