@@ -30,7 +30,7 @@
 
 <script>
     // import the country data
-    import data from '../data/data';
+    import data from '../../data/data';
     import ShoppingCart from "./ShoppingCart";
 
     export default {
