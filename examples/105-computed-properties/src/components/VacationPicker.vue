@@ -5,7 +5,9 @@
             <div class="col-6">
                 <ul class="list-group">
                     <li @click="selectCountry(country)"
-                        class="list-group-item" v-for="country in data.countries" :key="country.id">
+                        class="list-group-item"
+                        v-for="country in data.countries"
+                        :key="country.id">
                 <span :id="country.id"
                       :title="country.details">
                     {{ country.id }} - {{country.name}}
@@ -23,9 +25,10 @@
                     <li class="list-group-item" v-if="isExpensive">
                         <span class="badge badge-danger badge-pill">Expensive!</span>
                     </li>
-                    <li class="list-group-item" v-if="isOnSale">
-                        <span class="badge badge-warning badge-pill">On Sale!</span>
-                    </li>
+                    <!--*******************-->
+                    <!--Workshop: Show a badge if a destination is On Sale -->
+                    <!--i.e. costs less than 1000-->
+                    <!--*******************-->
                 </ul>
             </div>
         </div>
@@ -55,6 +58,7 @@
 		},
 		computed: {
 			selectedCountry() {
+				console.log('selectedCountry aangeroepen');
 				return {
 					// longhand notation: annotate every property
 					// id: this.data.countries[this.selectedCountryIndex].id,
@@ -64,16 +68,17 @@
 					// details: this.data.countries[this.selectedCountryIndex].details,
 					// img: this.data.countries[this.selectedCountryIndex].img
 
-					// shorthand notation: use the spread operator (=more elegant & scalable)
+					// shorthand notation: use the spread operator
+                    // (=more elegant & scalable)
+
 					...this.data.countries[this.selectedCountryIndex]
 				}
 			},
 			isExpensive() {
 				return data.countries[this.selectedCountryIndex].cost > 4000;
-			},
-			isOnSale() {
-				return data.countries[this.selectedCountryIndex].cost < 1000;
 			}
+			// Workshop: create a computed property for the isOnSale property of this component
+
 		}
 	}
 </script>
