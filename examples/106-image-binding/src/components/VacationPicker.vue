@@ -47,7 +47,8 @@
 		name: 'VacationPicker',
 		data() {
 			return {
-				// make data available in app. This is shorthand notation for 'data : data'
+				// make data available in app.
+                // This is shorthand notation for 'data : data'
 				data,
 				header: 'Pick your next vacation',
 				counter: 0,
@@ -59,6 +60,7 @@
 				this.selectedCountryIndex = this.data.countries.indexOf(country);
 			},
             getImgUrl(img){
+				// WebPack function require() - https://vue-loader.vuejs.org/guide/asset-url.html#asset-url-handling
 				console.log(img);
 				return require('../assets/countries/' + img);
             }
