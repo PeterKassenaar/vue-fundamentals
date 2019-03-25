@@ -2,6 +2,10 @@
   <div class>
     <h1>{{ header }}</h1>
     <ul class="list-group">
+        <!--*************-->
+        <!--Workshop: add eventlistener for click-event to li-element. -->
+        <!-- Show the name + capital of clicked city in an alert-box-->
+        <!--*************-->
       <li
         @mouseover="logCity(country.name)"
         class="list-group-item"
