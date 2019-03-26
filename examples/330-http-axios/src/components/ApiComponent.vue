@@ -27,19 +27,19 @@
                 errors: []
             }
         },
-        async created() {
+        created() {
             // call axios with the url, it returns a promise.
-            // axios.get(this.url)
-            //     .then(response => this.countries = response.data)
-            //     .catch(err => this.errors.push(err))
+            axios.get(this.url)
+                 .then(response => this.countries = response.data)
+                 .catch(err => this.errors.push(err))
 
             // async / await version (created() becomes async created())
-            try {
-                const response = await axios.get(this.url)
-                this.countries = response.data
-            } catch (err) {
-                this.errors.push(err)
-            }
+            //try {
+            //    const response = await axios.get(this.url)
+            //    this.countries = response.data
+            //} catch (err) {
+            //    this.errors.push(err)
+            //}
         }
     }
 </script>
