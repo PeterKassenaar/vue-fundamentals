@@ -4,7 +4,7 @@ import App from './App.vue'
 // creating a global component
 // (you don't do this very often in real applications)
 Vue.component('ComponentA', {
-	template: `<span>Hello World - this is component A</span>`
+	template: `<span>Hello World - this is component A. I'm a Global Component</span>`
 });
 
 Vue.config.productionTip = false;

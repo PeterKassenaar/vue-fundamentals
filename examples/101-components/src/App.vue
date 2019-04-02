@@ -1,23 +1,30 @@
 <template>
     <div id="app">
+        <h3>
+            <!-- Global component-->
+            <ComponentA/>
+        </h3>
         <img alt="Vue logo" src="./assets/logo.png">
         <HelloWorld msg="Welcome to Your Vue.js App" name="Peter"/>
-        <h3>Single File Component inserted here:</h3>
+        <h3>
+            Single File Component inserted here:
+        </h3>
         <SingleFileComponent/>
+
     </div>
 </template>
 
 <script>
-	import HelloWorld from './components/HelloWorld.vue'
-	import SingleFileComponent from "./components/SingleFileComponent";
+    import HelloWorld from './components/HelloWorld.vue'
+    import SingleFileComponent from "./components/SingleFileComponent";
 
-	export default {
-		name: 'app',
-		components: {
-			SingleFileComponent,
-			HelloWorld
-		}
-	}
+    export default {
+        name: 'app',
+        components: {
+            SingleFileComponent,
+            HelloWorld
+        }
+    }
 </script>
 
 <style>
