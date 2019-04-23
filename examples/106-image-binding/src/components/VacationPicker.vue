@@ -81,10 +81,10 @@
 				}
 			},
 			isExpensive() {
-				return data.countries[this.selectedCountryIndex].cost > 4000;
+				return this.data.countries[this.selectedCountryIndex].cost > 4000;
 			},
 			isOnSale() {
-				return data.countries[this.selectedCountryIndex].cost < 1000;
+				return this.data.countries[this.selectedCountryIndex].cost < 1000;
 			}
 		}
 	}
