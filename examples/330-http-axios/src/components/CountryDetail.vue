@@ -45,11 +45,11 @@
 		// Update nested view, Method 2 - Create a watcher.
 		// The component is updated on route change.
 		watch: {
-			'$route'(to, from) {
-				console.log(to, from); // logging, so you can see what's going on
-				this.id = to.params.id;
-				this.country = this.data.countries.find(c => c.id === +this.id);
-			}
+			// '$route'(to, from) {
+			// 	console.log(to, from); // logging, so you can see what's going on
+			// 	this.id = to.params.id;
+			// 	this.country = this.data.countries.find(c => c.id === +this.id);
+			// }
 		},
 		// Update nested view, Method 3 - use the beforeRouteUpdate() method,
         // introduced in Vue 2.2.

@@ -4,8 +4,6 @@ import Router from 'vue-router'
 
 // import the required components
 import VacationPicker from "../components/VacationPicker";
-import AddCountry from "../components/AddCountry";
-import UpdateCountry from "../components/UpdateCountry";
 import CountryDetail from "../components/CountryDetail";
 import ApiComponent from "../components/ApiComponent";
 //
