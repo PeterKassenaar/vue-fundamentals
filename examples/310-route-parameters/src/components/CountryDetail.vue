@@ -38,8 +38,11 @@
 			this.name = this.$route.params.name;
 
 			// fetch the correct country from the loaded data
-            this.country = this.data.countries.find(c => c.id === +this.id);
+            // this.country = this.data.countries.find(c => c.id === +this.id);
         },
+        // ****************
+        // existing methods/properties below...
+        // ****************
         data(){
 			return {
 				data

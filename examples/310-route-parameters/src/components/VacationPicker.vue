@@ -34,7 +34,7 @@
 				console.log('navigate to ' + country.name);
 				// navigate to next page using the parametrized route.
 				// We now need an object notation to push the route. We can't use just
-				// string concatenation, so this won't work: this.$router.push('/detail' + country.id + ...)
+				// string concatenation, so this won't work: this.$router.push('/detail/' + country.id + '/...')
 				this.$router.push({
 					name: 'detail',
 					params: {
