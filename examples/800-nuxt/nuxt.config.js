@@ -1,4 +1,5 @@
 import pkg from './package'
+import posts from './data/posts';
 
 export default {
   mode: 'universal',
@@ -60,6 +61,18 @@ export default {
     ** You can extend webpack config here
     */
     extend(config, ctx) {
+    }
+  },
+  /**
+   * Generate options, https://nuxtjs.org/api/configuration-generate/ (PK)
+   * TODO: create dynamic function, returning a promise
+   */
+  generate: {
+    routes: function (callback) {
+      const routes = posts.map(post => {
+        return `/posts/${post.id}`
+      });
+      callback(null, routes)
     }
   }
 }
