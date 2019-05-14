@@ -15,6 +15,9 @@
         <li class="nav-item">
           <nuxt-link exact class="nav-link" to="/history">History</nuxt-link>
         </li>
+        <li class="nav-item">
+          <nuxt-link exact class="nav-link" to="/PostList">Post List</nuxt-link>
+        </li>
       </ul>
     </div>
   </nav>
