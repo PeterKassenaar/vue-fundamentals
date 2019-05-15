@@ -10,10 +10,10 @@ const url = 'https://restcountries.eu/rest/v2/all';
 
 export default new Vuex.Store({
     state: {
-        // State for working with the shopping cart
+        // 1. State for working with the shopping cart
         items: [],
         checkoutStatus: null,
-        // State for working with the RestCountries API
+        // 2. State for working with the RestCountries API
         loadingStatus: 'notloading',
         countries: [],
         errors: []

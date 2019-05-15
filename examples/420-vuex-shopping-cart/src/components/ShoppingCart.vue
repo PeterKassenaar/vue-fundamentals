@@ -49,7 +49,8 @@
         },
         methods: {
             checkout(products) {
-                this.$store.dispatch('checkout', products)
+                this.$store.dispatch('checkout', products);
+                alert('Order placed! ' + JSON.stringify(products));
             },
             deleteCountry(country){
                 this.$store.dispatch('removeCountryFromCart', country)

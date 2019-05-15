@@ -13,6 +13,8 @@
                 </span>
                     </li>
                 </ul>
+                <hr>
+                <ShoppingCart />
             </div>
             <div class="col-md-6">
                 <!--The Nested router view here-->
@@ -22,7 +24,7 @@
         <div class="row">
             <div class="col">
                 <hr>
-                <ShoppingCart></ShoppingCart>
+
             </div>
         </div>
     </div>
