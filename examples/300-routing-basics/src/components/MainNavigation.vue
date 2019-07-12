@@ -18,10 +18,10 @@
                             <router-link to="/" class="nav-link" exact>Home</router-link>
                         </li>
                         <li class="nav-item">
-                            <router-link to="add" class="nav-link" exact>Add Country</router-link>
+                            <router-link to="/add" class="nav-link" exact>Add Country</router-link>
                         </li>
                         <li class="nav-item">
-                            <router-link to="update" class="nav-link" exact>Update Country</router-link>
+                            <router-link to="/update" class="nav-link" exact>Update Country</router-link>
                         </li>
                     </ul>
                 </div>

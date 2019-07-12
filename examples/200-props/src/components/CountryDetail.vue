@@ -24,11 +24,35 @@
 <script>
 	export default {
 		name: "CountryDetail",
+		// Props fungeren als een soort publieke 'API' voor de component
+        // 1. Props als array met namen:
 		props: ['country'],
+        // 2. Uitgebreide props: als objectnotatie. Extra mogelijkheden:
+		// props: {
+		// 	country: {
+		// 		type: Object,
+		// 		required: false,
+		// 		default() {
+		// 			return {
+		// 				id: -1,
+		// 				name: 'Unknown',
+		// 				capital: 'Unknown',
+		// 				img: '',
+		// 				details: '',
+		// 				cost: -1
+		// 			}
+		// 		}
+		// 	}
+		// },
+		beforeUpdate() {
+			console.log('Component updated!');
+		},
 		methods: {
 			getImgUrl(img) {
-				console.log(img);
-				return require('../assets/countries/' + img);
+				if (img) {
+					console.log(img);
+					return require('../assets/countries/' + img);
+				}
 			}
 		},
 		computed: {
