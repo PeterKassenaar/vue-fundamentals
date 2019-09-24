@@ -15,6 +15,18 @@
                 </span>
                     </li>
                 </ul>
+<!--                ***************-->
+<!--                Below: result of the workshop: passing data from one component
+                    as a prop to another (child) component. Comment in to see the results-->
+<!--                ***************-->
+<!--                <div style="border: 1px solid red; padding :4px; margin:4px;">-->
+<!--                    <p class="text-muted text-sm-left">component: VacationPicker.vue</p>-->
+<!--                    <input type="text" class="form-control-lg"-->
+<!--                           v-model="person.firstName" placeholder="name..."-->
+<!--                           @keyup.enter="setName()">-->
+<!--                    <ShowPerson :name="personName"/>-->
+<!--                </div>-->
+
             </div>
             <div class="col-6">
                 <h2>Selected:</h2>
@@ -61,54 +73,68 @@
 </template>
 
 <script>
-    import data from '../data/data';
-    import mixins from '../mixins/mixins';
+	import data from '../data/data';
+	import mixins from '../mixins/mixins';
+	import ShowPerson from "./ShowPerson";
 
-    export default {
-        name: "VacationPicker",
-        data() {
-            return {
-                data,
-                title: 'Vue Vacation Picker',
-                selectedCountryIndex: 0,
-                selectedCountries: []
-            }
-        },
-        // Code, mixed in to this component
-        mixins: [mixins],
-        // lifecycle hook
-        created() {
-            console.log('Vacation Picker is created...');
-        },
-        methods: {
-            selectCountry(index) {
-                this.selectedCountryIndex = index;
-            },
-            postCountries() {
-                alert('Send to database: ' +
-                    this.selectedCountries)
-            }
-        },
-        computed: {
-            selectedCountry() {
-                return {
-                    // longhand notation
-                    // id: this.data.countries[this.selectedCountryIndex].id,
-                    // name: this.data.countries[this.selectedCountryIndex].name,
-                    // capital: this.data.countries[this.selectedCountryIndex].capital,
-                    // cost: this.data.countries[this.selectedCountryIndex].cost,
-                    // details: this.data.countries[this.selectedCountryIndex].details,
-                    // img: this.data.countries[this.selectedCountryIndex].img
+	export default {
+		name: "VacationPicker",
+		components: {ShowPerson},
+		data() {
+			return {
+				data,
+				title: 'Vue Vacation Picker',
+				selectedCountryIndex: 0,
+				selectedCountries: [],
+				person: {
+					firstName: '',
+					lastName: '',
+					email: ''
+				},
+				personName: ''
+			}
+		},
+		// Code, mixed in to this component
+		mixins: [mixins],
+		// lifecycle hook
+		created() {
+			// eslint-disable-next-line no-console
+			console.log('Vacation Picker is created...');
+		},
+		methods: {
+			setName() {
+				// kopie van de firstname, deze wordt
+                // doorgegeven aan de child component.
+				this.personName = this.person.firstName;
+			},
+			selectCountry(index) {
+				this.selectedCountryIndex = index;
+			},
+			postCountries() {
+				alert('Send to database: ' +
+					this.selectedCountries)
+			}
+		},
+		computed: {
+			selectedCountry() {
+				return {
+					// longhand notation
+					// id: this.data.countries[this.selectedCountryIndex].id,
+					// name: this.data.countries[this.selectedCountryIndex].name,
+					// capital: this.data.countries[this.selectedCountryIndex].capital,
+					// cost: this.data.countries[this.selectedCountryIndex].cost,
+					// details: this.data.countries[this.selectedCountryIndex].details,
+					// img: this.data.countries[this.selectedCountryIndex].img
 
-                    // shorthand notation
-                    ...this.data.countries[this.selectedCountryIndex]
-                }
-            },
-            isExpensive() {
-                return this.data.countries[this.selectedCountryIndex].cost > 4000;
-            }
-        }
-    }
+					// shorthand notation
+					...this.data.countries[this.selectedCountryIndex]
+				}
+			},
+			isExpensive() {
+				return this.data.countries[this.selectedCountryIndex].cost > 4000;
+			}
+		}
+	}
 </script>
 
 <style scoped>
