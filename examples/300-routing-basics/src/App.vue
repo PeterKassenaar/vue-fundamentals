@@ -3,6 +3,8 @@
     <div id="app" class="container">
         <MainNavigation />
         <router-view></router-view>
+        <hr>
+        Copyright(C) 2019
     </div>
 </template>
 

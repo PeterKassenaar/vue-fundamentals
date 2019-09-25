@@ -3,7 +3,7 @@
         <div class="col">
             <!--Main navigation - Bootstrap Navbar, see https://getbootstrap.com/docs/4.0/components/navbar/ for details -->
             <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                <router-link class="navbar-brand" :to="{name: 'home'}" exact>
+                <router-link class="navbar-brand transparant" exact :to="homeRoute">
                     <img src="../assets/logo.png" alt="Vue Logo">
                 </router-link>
                 <button class="navbar-toggler" type="button" data-toggle="collapse"
@@ -15,13 +15,13 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item">
-                            <router-link to="/" class="nav-link" exact>Home</router-link>
+                            <router-link to="/" class="nav-link" exact >Home</router-link>
                         </li>
                         <li class="nav-item">
-                            <router-link to="/add" class="nav-link" exact>Add Country</router-link>
+                            <router-link to="add" class="nav-link" exact>Add Country</router-link>
                         </li>
                         <li class="nav-item">
-                            <router-link to="/update" class="nav-link" exact>Update Country</router-link>
+                            <router-link to="update" class="nav-link" exact>Update Country</router-link>
                         </li>
                     </ul>
                 </div>
@@ -32,7 +32,12 @@
 
 <script>
 	export default {
-		name: "MainNavigation"
+		name: "MainNavigation",
+        computed:{
+			homeRoute(){
+				return {name: 'home'}
+            }
+        }
 	}
 </script>
 
@@ -44,7 +49,10 @@
     }
     /*Automatic assignment of this class by Vue, based on router state*/
     .router-link-active{
-        background-color: cornsilk;
+        background-color: rebeccapurple;
         color: white;
+    }
+    .transparant{
+        background-color: transparent !important;
     }
 </style>

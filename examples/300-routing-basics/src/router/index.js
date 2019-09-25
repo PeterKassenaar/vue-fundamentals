@@ -7,6 +7,7 @@ import VacationPicker from "../components/VacationPicker";
 import AddCountry from "../components/AddCountry";
 import UpdateCountry from "../components/UpdateCountry";
 import CountryDetail from "../components/CountryDetail";
+import FileNotFound from "../components/404Component";
 //
 Vue.use(Router);
 
@@ -20,18 +21,24 @@ export default new Router({
 		},
 		{
 			path: '/add',
-			name : 'add',
+			name: 'add',
 			component: AddCountry
 		},
 		{
 			path: '/update',
-			name : 'update',
+			name: 'update',
 			component: UpdateCountry
 		},
 		{
 			path: '/detail',
-			name : 'detail',
+			name: 'detail',
 			component: CountryDetail
+		},
+		{
+			// catch all route
+			path:'*',
+			name:'404',
+			component: FileNotFound
 		}
 	]
 })
