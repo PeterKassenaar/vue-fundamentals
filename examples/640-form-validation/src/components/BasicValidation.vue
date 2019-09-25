@@ -3,15 +3,15 @@
         <h2>Basic form validation</h2>
         <p>TODO: - update classes to Bootstrap</p>
         <p>- Documentation</p>
-        <p>Credits: https://vuelidate.netlify.com/#sub-basic-form</p>
+        <p>Credits: <a href="https://vuelidate.netlify.com/#sub-basic-form">https://vuelidate.netlify.com/#sub-basic-form</a>.</p>
         <div>
-            <div class="form-group" :class="{ 'form-group--error': $v.name.$error }">
-                <label class="form__label">Name</label>
-                <input class="form__input" v-model.trim="$v.name.$model"/>
+            <div class="form-group alert" :class="{ 'alert-warning': $v.name.$error, 'alert-success': !$v.name.$invalid }">
+                <label for="name">Name</label>
+                <input id="name" class="form-control" v-model.trim="$v.name.$model"/>
             </div>
-            <span>Invalid: {{ $v.name.$invalid}}</span>
-            <div class="error" v-if="!$v.name.required">Field is required</div>
-            <div class="error" v-if="!$v.name.minLength">Name must have at least {{$v.name.$params.minLength.min}} letters.</div>
+            <span>Invalid?: {{ $v.name.$invalid}}</span>
+            <div class="alert alert-warning" v-if="!$v.name.required && $v.name.$dirty">Field is required</div>
+            <div class="alert alert-warning" v-if="!$v.name.minLength && $v.name.$dirty">Name must have at least {{$v.name.$params.minLength.min}} letters.</div>
             <hr>
             <div class="form-group" :class="{ 'form-group--error': $v.age.$error }">
                 <label class="form__label">Age</label>
