@@ -1,0 +1,20 @@
+/*Global styles*/
+.form-valid {
+    background-color: #D4EDDA;
+    color: #333;
+    font-size: 36px;
+    padding: 10px;
+    width: 100%;
+    border-radius: 4px;
+    text-align: center;
+}
+
+.form-invalid {
+    background-color: #F8D7DA;
+    color: #333;
+    font-size: 36px;
+    padding: 10px;
+    width: 100%;
+    border-radius: 4px;
+    text-align: center;
+}
