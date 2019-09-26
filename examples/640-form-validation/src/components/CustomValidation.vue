@@ -1,8 +1,9 @@
 <template>
     <div class="row">
         <div class="col-6">
-            <h2>Different types of custom validation, using Vuelidate</h2>
-            <p>For password matching, using the 'sameAs' property. See: <a href="https://vuelidate.netlify.com/#sub-contextified-validators">
+            <h2>Custom validation</h2>
+            <p>For password matching, using the 'sameAs' property. See: <a
+                    href="https://vuelidate.netlify.com/#sub-contextified-validators">
                 https://vuelidate.netlify.com/#sub-contextified-validators</a>.
             </p>
             <form @submit.prevent>
@@ -35,8 +36,6 @@
                     </div>
                     <div v-if="!$v.passwordMatch.sameAsPassword">Sorry, passwords do not match!</div>
                 </div>
-                <hr>
-
             </form>
         </div>
         <div class="col-6">
@@ -51,33 +50,28 @@
 </template>
 
 <script>
-	import {required, minLength, sameAs} from 'vuelidate/lib/validators'
+    import {required, minLength, sameAs} from 'vuelidate/lib/validators'
 
-	export default {
-		name: 'CustomValidation',
-		data() {
-			return {
-				password: '',
-                passwordMatch:''
-			}
-		},
-		validations: {
-			password: {
-				required,
-				minLength: minLength(5)
-			},
-            passwordMatch:{
-				required,
-				minLength: minLength(5),
-				sameAsPassword: sameAs('password')
+    export default {
+        name: 'CustomValidation',
+        data() {
+            return {
+                password: '',
+                passwordMatch: ''
             }
-		},
-		computed: {
-			passwordCheck() {
-				return this.$v.password;
-			}
-		}
-	}
+        },
+        validations: {
+            password: {
+                required,
+                minLength: minLength(5)
+            },
+            passwordMatch: {
+                required,
+                minLength: minLength(5),
+                sameAsPassword: sameAs('password')
+            }
+        }
+    }
 </script>
 
 <style scoped>
