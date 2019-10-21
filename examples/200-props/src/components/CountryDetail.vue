@@ -24,10 +24,10 @@
 <script>
 	export default {
 		name: "CountryDetail",
-		// Props fungeren als een soort publieke 'API' voor de component
-        // 1. Props als array met namen:
+		// Props are like a public 'API' for the component
+        // Option 1. Props as a named array:
 		props: ['country'],
-        // 2. Uitgebreide props: als objectnotatie. Extra mogelijkheden:
+        // Option 2. Extended props: as object notation. Extra options:
 		// props: {
 		// 	country: {
 		// 		type: Object,
@@ -65,7 +65,3 @@
 		}
 	}
 </script>
-
-<style scoped>
-
-</style>
