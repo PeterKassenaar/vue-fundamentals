@@ -59,7 +59,7 @@
 		methods: {
 			prevCountry() {
 				this.currentCountryIndex--;
-				if (this.currentCountryIndex <= 0) {
+				if (this.currentCountryIndex < 0) {
 					this.currentCountryIndex = this.data.countries.length - 1;
 				}
 			},
