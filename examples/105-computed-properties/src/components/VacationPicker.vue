@@ -58,20 +58,20 @@
 		},
 		computed: {
 			selectedCountry() {
-				console.log('selectedCountry aangeroepen');
+				console.log('called selectedCountry computed property...');
 				return {
 					// longhand notation: annotate every property
-					// id: this.data.countries[this.selectedCountryIndex].id,
-					// name: this.data.countries[this.selectedCountryIndex].name,
-					// capital: this.data.countries[this.selectedCountryIndex].capital,
-					// cost: this.data.countries[this.selectedCountryIndex].cost,
-					// details: this.data.countries[this.selectedCountryIndex].details,
-					// img: this.data.countries[this.selectedCountryIndex].img
+					id: this.data.countries[this.selectedCountryIndex].id,
+					name: this.data.countries[this.selectedCountryIndex].name,
+					capital: this.data.countries[this.selectedCountryIndex].capital,
+					cost: this.data.countries[this.selectedCountryIndex].cost,
+					details: this.data.countries[this.selectedCountryIndex].details,
+					img: this.data.countries[this.selectedCountryIndex].img
 
 					// shorthand notation: use the spread operator
                     // (=more elegant & scalable)
 
-					...this.data.countries[this.selectedCountryIndex]
+					// ...this.data.countries[this.selectedCountryIndex]
 				}
 			},
 			isExpensive() {
