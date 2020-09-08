@@ -12,6 +12,7 @@
             Add Todo
         </button>
         <ul class="list-group">
+        <!-- TODO (haha) - create a separate component for TodoListItems-->
             <li class="list-group-item"
                 v-for="(todo, index) in todos" :key="index">
                 <label>
