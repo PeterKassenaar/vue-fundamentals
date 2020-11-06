@@ -40,6 +40,9 @@
 		methods: {
 			highlightBackground(index) {
 				console.log('checking background color for....' + index);
+				// returning a valid CSS style object here, where the
+        // property backgroundColor is set to lightBlue or transparent,
+        // depending on the cost of a country. For instance: { backgroundColor: 'transparent'}
 				return {
 					backgroundColor:
 						this.data.countries[index].cost < this.selectedCost ?

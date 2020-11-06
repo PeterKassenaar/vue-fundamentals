@@ -16,11 +16,3 @@
 		}
 	}
 </script>
-
-<style>
-    /*This is a global style, because there is no 'scoped' keyword on the <style> tag */
-    #app {
-        font-family: 'Avenir', Helvetica, Arial, sans-serif;
-        color: #2c3e50;
-    }
-</style>

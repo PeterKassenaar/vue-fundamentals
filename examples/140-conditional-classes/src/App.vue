@@ -1,26 +1,22 @@
 <template>
-    <div id="app" class="container">
-        <h1>Conditionally applying styles</h1>
-        <VacationList />      
-    </div>
+  <div id="app" class="container">
+    <h1>Conditionally applying classes</h1>
+    <VacationList/>
+  </div>
 </template>
 
 <script>
 
-	import VacationList from "./components/VacationList";	
+import VacationList from "./components/VacationList";
+// import ConditionalClass from "@/components/ConditionalClass";
+// import VacationListSelect from "@/components/VacationListSelect";
 
-	export default {
-		name: 'app',
-		components: {			
-			VacationList
-		}
-	}
+export default {
+  name: 'app',
+  components: {
+    VacationList
+    // ConditionalClass,
+    // VacationListSelect,
+  }
+}
 </script>
-
-<style>
-    /*This is a global style, because there is no 'scoped' keyword on the <style> tag */
-    #app {
-        font-family: 'Avenir', Helvetica, Arial, sans-serif;
-        color: #2c3e50;
-    }
-</style>
