@@ -25,25 +25,25 @@
 	export default {
 		name: "CountryDetail",
 		// Props are like a public 'API' for the component
-        // Option 1. Props as a named array:
-		props: ['country'],
+        // Option 1. Props as a named array (deprecated in Vue 3):
+		// props: ['country'],
         // Option 2. Extended props: as object notation. Extra options:
-		// props: {
-		// 	country: {
-		// 		type: Object,
-		// 		required: false,
-		// 		default() {
-		// 			return {
-		// 				id: -1,
-		// 				name: 'Unknown',
-		// 				capital: 'Unknown',
-		// 				img: '',
-		// 				details: '',
-		// 				cost: -1
-		// 			}
-		// 		}
-		// 	}
-		// },
+		props: {
+			country: {
+				type: Object,
+				required: false,
+				default() {
+					return {
+						id: -1,
+						name: 'Unknown',
+						capital: 'Unknown',
+						img: '',
+						details: '',
+						cost: -1
+					}
+				}
+			}
+		},
 		beforeUpdate() {
 			console.log('Component updated!');
 		},
