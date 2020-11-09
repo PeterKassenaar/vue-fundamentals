@@ -15,47 +15,29 @@
                 </span>
                     </li>
                 </ul>
-                <!--                *********************-->
-                <!--                Creating a list of new countries via v-model-->
-                <!--                *********************-->
-                <hr>
-                <h2><label for="newCountry">New Countries</label></h2>
-                <input type="text"
-                       id="newCountry"
-                       class="form-control-lg"
-                       v-model="newCountry"
-                       placeholder="New Country"
-                       @keyup.enter="addCountry()"
-                >
-                <button @click="addCountry()" class="btn btn-info">
-                    Add Country
-                </button>
-                <ul class="list-group">
-                    <li class="list-group-item"
-                        v-for="(country, index) in newCountries" :key="index">
-                        {{ country }}
-                    </li>
-                </ul>
-
             </div>
             <div class="col-6">
-                <h2>Selected:</h2>
-                <ul class="list-group">
-                    <li class="list-group-item">{{ selectedCountry.id}}</li>
-                    <li class="list-group-item">{{ selectedCountry.name}}</li>
-                    <li class="list-group-item">{{ selectedCountry.capital}}</li>
-                    <li class="list-group-item">{{ selectedCountry.details}}</li>
-                    <li class="list-group-item">
-                        <img :src="getImgUrl(selectedCountry.img)"
-                             :alt="selectedCountry.img"
-                             class="img-fluid">
-                    </li>
-                    <li class="list-group-item" v-if="isExpensive">
-                        <span class="badge badge-danger badge-pill">
-                            Expensive!
-                        </span>
-                    </li>
-                </ul>
+              <!--                *********************-->
+              <!--                Creating a list of new countries via v-model-->
+              <!--                *********************-->
+              <hr>
+              <h2><label for="newCountry">New Countries</label></h2>
+              <input type="text"
+                     id="newCountry"
+                     class="form-control-lg"
+                     v-model="newCountry"
+                     placeholder="New Country"
+                     @keyup.enter="addCountry()"
+              >
+              <button @click="addCountry()" class="btn btn-info">
+                Add Country
+              </button>
+              <ul class="list-group">
+                <li class="list-group-item"
+                    v-for="(country, index) in newCountries" :key="index">
+                  {{ country }}
+                </li>
+              </ul>
             </div>
         </div>
         <div class="row">

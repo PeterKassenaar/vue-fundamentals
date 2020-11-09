@@ -2,6 +2,8 @@
   <div id="app" class="container">
     <h1>Conditionally applying classes</h1>
     <VacationList/>
+    <!--    <ConditionalClass />-->
+    <!--    <VacationListSelect/>-->
   </div>
 </template>
 
@@ -12,9 +14,9 @@ import VacationList from "./components/VacationList";
 // import VacationListSelect from "@/components/VacationListSelect";
 
 export default {
-  name: 'app',
+  name      : 'app',
   components: {
-    VacationList
+    VacationList,
     // ConditionalClass,
     // VacationListSelect,
   }

@@ -17,48 +17,31 @@
                 </ul>
             </div>
             <div class="col-6">
-                <h2>Selected:</h2>
-                <ul class="list-group">
-                    <li class="list-group-item">{{ selectedCountry.id}}</li>
-                    <li class="list-group-item">{{ selectedCountry.name}}</li>
-                    <li class="list-group-item">{{ selectedCountry.capital}}</li>
-                    <li class="list-group-item">{{ selectedCountry.details}}</li>
-                    <li class="list-group-item">
-                        <img :src="getImgUrl(selectedCountry.img)"
-                             :alt="selectedCountry.img"
-                             class="img-fluid" >
-                    </li>
-                    <li class="list-group-item" v-if="isExpensive">
-                        <span class="badge badge-danger badge-pill">
-                            Expensive!
-                        </span>
-                    </li>
-                </ul>
+              <h2>Countries cheaper than</h2>
+              <label>
+              <select class="form-control-lg"
+                      v-model="selectedCost"
+                      @change="filterCountries"
+              >
+                <option v-for="(cost, index) in costs"
+                        :key="index"
+                        :value="cost">
+                  {{ cost }}
+                </option>
+              </select>
+              </label>
+              <ul class="list-group">
+                <li v-for="(country, index) in filteredCountries"
+                    :key="index"
+                    class="list-group-item">
+                  {{ country.name }} (EUR: {{ country.cost}})
+                </li>
+              </ul>
             </div>
         </div>
         <div class="row">
             <div class="col">
                 <hr>
-                <h2>Countries cheaper than</h2>
-                <select class="form-control-lg"
-                        v-model="selectedCost"
-                        @change="filterCountries"
-                >
-                    <option v-for="(cost, index) in costs"
-                            :key="index"
-                            :value="cost">
-                        {{ cost }}
-                    </option>
-
-                </select>
-                <ul class="list-group">
-                    <li v-for="(country, index) in filteredCountries"
-                        :key="index"
-                        class="list-group-item">
-                        {{ country.name }} (EUR: {{ country.cost}})
-                    </li>
-                </ul>
-
             </div>
         </div>
     </div>
