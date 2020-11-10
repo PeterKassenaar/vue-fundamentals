@@ -31,8 +31,8 @@ export default {
       required: true
     },
     name: {
-      type:
-      String, required: true,
+      type: String,
+      required: true,
     },
     id: {
       type: Number,

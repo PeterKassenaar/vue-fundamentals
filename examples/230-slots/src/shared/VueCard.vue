@@ -6,6 +6,7 @@
         <div class="card-title">
             <slot name="card-title"></slot>
         </div>
+      <hr>
         <div class="card-text">
             <slot name="card-text"></slot>
         </div>
@@ -23,17 +24,17 @@
 
 <style scoped>
     .card-div {
-        border: 3px solid crimson;
-        padding: 10px;
-        border-radius: 40px;
+        border: 1px solid gray;
+        border-radius: 0 0 4px 4px;
+      padding: 10px;
     }
 
     .card-photo img {
-        border-radius: 40px;
         width: 100%;
     }
 
     .card-title {
+      text-align: center;
         font-size: 26px;
         font-weight: bold;
     }
@@ -44,5 +45,10 @@
 
     .card-btn {
         text-align: center;
+    }
+    .card-btn:hover {
+      cursor: pointer;
+      background-color: beige;
+      border-radius: 4px;
     }
 </style>
