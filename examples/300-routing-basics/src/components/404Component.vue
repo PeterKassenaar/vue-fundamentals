@@ -9,13 +9,6 @@
 
 <script>
 	export default {
-		name: 'FileNotFound',
-		data() {
-			return {}
-		}
+		name: 'FileNotFound'
 	}
 </script>
-
-<style scoped>
-
-</style>

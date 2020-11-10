@@ -4,7 +4,7 @@
         <MainNavigation />
         <router-view></router-view>
         <hr>
-        Copyright(C) 2019
+        Copyright(C) 2020-
     </div>
 </template>
 
