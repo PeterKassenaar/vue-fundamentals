@@ -8,7 +8,8 @@ const data = {
 			capital: 'Washington',
 			cost: 1250,
 			details: 'United States are among the most visited country in the world.',
-			img: 'washington.jpg'
+			img: 'washington.jpg',
+			population: 325000000
 		},
 		{
 			id: 2,
@@ -16,7 +17,8 @@ const data = {
 			capital: 'Amsterdam',
 			cost: 795,
 			details: 'The capital of the Netherlands, Amsterdam, is over 1000 years old.',
-			img: 'amsterdam.jpg'
+			img: 'amsterdam.jpg',
+			population: 17000000
 		},
 		{
 			id: 3,
@@ -32,7 +34,8 @@ const data = {
 			capital: 'Tokyo',
 			cost: 2895,
 			details: 'Japan was a closed community for thousands of years. Its capital, Tokyo, is lit up by thousands of neon light signs at night',
-			img: 'tokyo.jpg'
+			img: 'tokyo.jpg',
+			population: 126000000
 		},
 		{
 			id: 5,

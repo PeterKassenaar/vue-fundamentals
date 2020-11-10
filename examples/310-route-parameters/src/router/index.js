@@ -11,6 +11,7 @@ import CountryDetail from "../components/CountryDetail";
 Vue.use(Router);
 
 export default new Router({
+	mode: 'history',
 	routes: [
 		// define all routes here....
 		{
