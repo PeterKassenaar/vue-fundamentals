@@ -4,6 +4,7 @@
 
 https://opendata.rdw.nl/resource/m9d7-ebf2.json?kenteken= + kenteken
 https://swapi.dev/ - The Star Wars API
+https://pokeapi.co/ - The RESTful Pokemon API
 https://api.openweathermap.org/data/2.5/weather?units=metric&appid=8566d604cd9402b65394b034e52aa2af&q=' + city  - Open weathermap
 https://ergast.com/mrd/ - Ergast Motor (Formule 1) API
 https://randomuser.me/api/?results=10 - random user data
