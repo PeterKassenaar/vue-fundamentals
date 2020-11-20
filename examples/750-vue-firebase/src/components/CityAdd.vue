@@ -21,7 +21,7 @@
         <span class="fa fa-save"></span>
         Save
       </button>
-      <button @click="this.$router.push('/')"
+      <button @click="cancel()"
               class="btn btn-outline-dark">
         <span class="fa fa-undo"></span>
         Cancel
@@ -53,6 +53,7 @@ export default {
           province: this.cityProvince,
           highlights: this.cityHighlights
         }
+        // CITY toevoegen
         cityService.addCity(newCity)
         // Show alert, go back to homepage after 1,5 seconds
         this.cityAdded = true;
@@ -62,6 +63,9 @@ export default {
       } else {
         console.log('You need at least two (2) characters in the city name.');
       }
+    },
+    cancel(){
+      this.$router.push('/');
     }
   }
 }
