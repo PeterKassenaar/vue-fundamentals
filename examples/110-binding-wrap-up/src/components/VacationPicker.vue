@@ -12,8 +12,8 @@
                         <span v-if="isExpensive" class="badge badge-danger">(expensive)</span>
                     </h2>
                 </div>
-                <button @click="prevCountry()" class="btn btn-success"> << Back</button>
-                <button @click="nextCountry()" class="btn btn-success">Forward >></button>
+                <button @click="prevCountry()" class="btn btn-success"> &lt;&lt; Back</button>
+                <button @click="nextCountry()" class="btn btn-success">Forward &gt;&gt;</button>
                 <button @click="showDetails = !showDetails" class="btn btn-primary">
                     <span v-if="showDetails">Hide details</span>
                     <span v-if="!showDetails">Show details</span>
