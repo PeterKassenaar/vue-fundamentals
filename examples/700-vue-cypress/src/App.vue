@@ -1,28 +1,20 @@
 <template>
-    <div id="app">
-        <img alt="Vue logo" src="./assets/logo.png">
-        <TodoList/>
-    </div>
+  <div id="app" class="container">
+    <img alt="Vue logo" src="./assets/logo.png">
+    <p>A small demo application on Vue Testing with Cypress. <br>
+      Check <code>../cypress/integration/TodoList_spec.js</code> for details
+    </p>
+    <TodoList/>
+  </div>
 </template>
 
 <script>
-	import TodoList from './components/TodoList.vue'
+import TodoList from './components/TodoList.vue'
 
-	export default {
-		name: 'app',
-		components: {
-			TodoList
-		}
-	}
+export default {
+  name: 'app',
+  components: {
+    TodoList
+  }
+}
 </script>
-
-<style>
-    #app {
-        font-family: 'Avenir', Helvetica, Arial, sans-serif;
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
-        text-align: center;
-        color: #2c3e50;
-        margin-top: 60px;
-    }
-</style>

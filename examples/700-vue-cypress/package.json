@@ -9,6 +9,7 @@
     "cypress:open": "cypress open"
   },
   "dependencies": {
+    "bootstrap": "^4.6.0",
     "core-js": "^2.6.5",
     "vue": "^2.6.10"
   },
@@ -17,7 +18,7 @@
     "@vue/cli-plugin-eslint": "^3.6.0",
     "@vue/cli-service": "^3.6.0",
     "babel-eslint": "^10.0.1",
-    "cypress": "^3.2.0",
+    "cypress": "^6.8.0",
     "eslint": "^5.16.0",
     "eslint-plugin-vue": "^5.0.0",
     "vue-template-compiler": "^2.5.21"
