@@ -2,7 +2,7 @@
   <div class="container">
     <img alt="Vue logo" src="./assets/logo.png">
     <!--  0. Default HelloWorld Component-->
-    <!--  <HelloWorld msg="Hello TypeScript App"/>-->
+      <HelloWorld msg="Hello TypeScript App"/>
     <!--  1. Counter component using class notation with 'extends'-->
     <!--  <CounterExtends/>-->
     <!--  2. Counter component using defineComponent()-->
@@ -10,7 +10,9 @@
     <!--  3. VacationPicker component, using Country interface as model-->
     <!--  <VacationPicker/>-->
     <!--  4. Component to search an external API-->
-    <CountryApi/>
+    <!--    <CountryApi/>-->
+    <!--    5. Counter component using the Vue 3 Composition API-->
+    <!--    <CounterComposition />-->
   </div>
 </template>
 
@@ -21,6 +23,7 @@ import CounterExtends from "@/components/01-CounterClass.vue";
 import CounterDefine from "@/components/02-CounterDefine.vue";
 import VacationPicker from "@/components/04-VacationPicker.vue";
 import CountryApi from '@/components/05-CountryApi.vue';
+import CounterComposition from '@/components/06-CounterComposition.vue';
 
 @Options({
   components: {
@@ -28,7 +31,8 @@ import CountryApi from '@/components/05-CountryApi.vue';
     CounterExtends,
     CounterDefine,
     HelloWorld,
-    CountryApi
+    CountryApi,
+    CounterComposition
   },
 })
 export default class App extends Vue {
