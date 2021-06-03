@@ -32,6 +32,8 @@
 </template>
 
 <script lang="ts">
+// Using an external library here. NOT core Vue.
+// see https://class-component.vuejs.org/ for more information
 import { Options, Vue } from 'vue-class-component';
 
 @Options({

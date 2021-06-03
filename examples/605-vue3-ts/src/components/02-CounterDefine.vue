@@ -13,7 +13,8 @@ import {Counter} from "@/model/counterModel";
 import {defineComponent} from "vue";
 
 // The Options API is used here. The component is NOT a class, but
-// wrapped in defineComponent from Vue.
+// wrapped in defineComponent from Vue core.
+// More info: https://v3.vuejs.org/guide/typescript-support.html#defining-vue-components
 export default defineComponent({
 
   data() {

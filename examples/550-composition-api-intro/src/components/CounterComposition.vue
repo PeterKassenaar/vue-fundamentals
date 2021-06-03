@@ -27,9 +27,15 @@
 			}
 		},
 		setup(props) {
-			// initialize our counter, based on the existence of a prop 'start'
+			// 1. Initialize our counter, based on the existence of a prop 'start'.
+      // wrap it inside ref().
 			const counter = props.start ? ref(props.start) : ref(0);
 
+			// 2. This will NOT work (as the counter is not reactive):
+      // const counter = props.start ? props.start : 0;
+
+			// 3. Note the 'value' property that we're incrementing. Not the
+      // counter directly, b/c it is now a ref().
 			const increment = () => {
 				counter.value++;
 			};
@@ -38,7 +44,7 @@
 				counter.value--;
 			};
 
-			// return an object with the values you want to expose to the template
+			// 4. Return an object with the values you want to expose to the template
 			return {
 				counter,
 				increment,

@@ -53,6 +53,7 @@ export default defineComponent({
             console.log(response.data);
           })
     },
+    // If such a route were available:
     // getCountry(name :string) {
     //   this.$router.push({
     //     name: 'api-detail',
