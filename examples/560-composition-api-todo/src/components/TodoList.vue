@@ -1,6 +1,6 @@
 <template>
     <div>
-        <h2>List of Todo's</h2>
+        <h2>List of Todo's - classical way</h2>
         <input type="text"
                placeholder="new todo..."
                class="form-control-lg"
