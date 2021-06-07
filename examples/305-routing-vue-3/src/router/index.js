@@ -37,9 +37,13 @@ const router = createRouter({
 
 // 3. Configure:  Dynamically set the page title (globally!) Not on local route
 router.beforeEach((to) => {
-  // Look at the root level .env-file for the APP_TITLE variable
+  // 3a. Look at the root level .env-file for the APP_TITLE variable
   const docT = `${process.env.VUE_APP_TITLE} - ${to.name}` // use the name from the route, see above
   document.title = docT
+
+  // 3b. Another Example: authentication before entering a route
+  //
+  // ... return true|false, based on auth
 });
 
 
