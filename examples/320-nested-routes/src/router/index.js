@@ -15,19 +15,6 @@ export default new Router({
 	routes: [
 		// define all routes here....
 		{
-			path: '/',
-			name: 'home',
-			component: VacationPicker,
-			// child route - the clicked item is shown inside a nested <router-view>
-			children: [
-				{
-					path: ':id',
-					name: 'detail',
-					component: CountryDetail
-				},
-			]
-		},
-		{
 			path: '/add',
 			name: 'add',
 			component: AddCountry
@@ -36,6 +23,21 @@ export default new Router({
 			path: '/update',
 			name: 'update',
 			component: UpdateCountry
-		}
+		},
+		{
+			path: '/',
+			name: 'home',
+			component: VacationPicker,
+			// child route - the clicked item is shown inside a nested <router-view>
+			// make note, in THIS case, this route SHOULD be last. Why??
+			children: [
+				{
+					path: ':id',
+					name: 'detail',
+					component: CountryDetail
+				},
+			]
+		},
+
 	]
 })
