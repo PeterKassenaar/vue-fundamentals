@@ -1,8 +1,9 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import Home from '../views/Home.vue'
 import Contact from "@/views/Contact";
-import FileNotFound from "../components/FileNotFound";
+import FileNotFound from "@/components/404Component";
 
+// 1. Set the routing table
 const routes = [
   {
     path: '/',
@@ -28,9 +29,19 @@ const routes = [
   },
 ]
 
+// 2. Create the router
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
   routes,
 })
 
-export default router
+// 3. Configure:  Dynamically set the page title (globally!) Not on local route
+router.beforeEach((to) => {
+  // Look at the root level .env-file for the APP_TITLE variable
+  const docT = `${process.env.VUE_APP_TITLE} - ${to.name}` // use the name from the route, see above
+  document.title = docT
+});
+
+
+// 4. Configured router is exported
+export default router;
