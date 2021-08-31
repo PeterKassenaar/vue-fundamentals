@@ -14,7 +14,14 @@ example code on the training Vue Fundamentals.
 - VueJS Style Guide. Read (and use!) this. https://vuejs.org/v2/style-guide/
 - VueJS Cheat Sheet: https://www.vuemastery.com/vue-cheat-sheet/
 
-### Book a training?
+## Vue (3) and TypeScript
+- Types vs. Interfaces: https://blog.devgenius.io/using-typescript-object-types-and-intersections-23cc4dbe3b92
+- Article by Todd Motto : https://ultimatecourses.com/blog/typescript-interfaces-vs-types
+- Vue 3 `ref()` vs. `reactive()`: https://www.danvega.dev/blog/2020/02/12/vue3-ref-vs-reactive/
+- Creating a TypeScript interface for your props: https://frontendsociety.com/using-a-typescript-interfaces-and-types-as-a-prop-type-in-vuejs-508ab3f83480 
+- Lazy Loading in Vue 3, article: https://dev.to/jsbroks/lazy-loading-components-in-vue-3-21o7
+
+## Book a training?
 Questions? Want to book a training on your own or with colleagues from your company? See the calendar at https://www.kassenaar.com for details or contact me at info@kassenaar.com.
 
 Copyright (C) 2019 - 2021 - www.vuetraining.nl  
