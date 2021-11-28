@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <!--      1. TodoList, WITHOUT extracting the composition to external file(s)-->
-     <TodoList/>
+         <TodoList/>
     <hr>
     <!--      2. TodoList, WITH extracting the composition to external file(s)-->
 <!--    <TodoListComposition/>-->

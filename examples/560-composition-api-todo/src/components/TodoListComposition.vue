@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h2>List of Todo's - Composition API</h2>
+    <h2>List of Todo's - using Composition API and useful 'hooks' analogy</h2>
     <input type="text"
            placeholder="new todo..."
            class="form-control-lg"
@@ -43,7 +43,7 @@ import useTodos from "../hooks/useTodos";
 export default {
   name: "TodoListComposition",
   setup() {
-    // composing the API of this component together from various 'hooks',
+    // 1. Composing the API of this component together from various 'hooks',
     // using ES6 destructuring here
     const {
       newTodo,
@@ -54,13 +54,13 @@ export default {
       remainingItems,
     } = useTodos()
 
-    // possible future use - import more hooks/composition stuff
+    // 2. Extending this app for future use - import more hooks/composition stuff
     // const {
     //     save,
     //     clear
     // } = useLocalStorage()
 
-    // API of this component, composed out of the imported functions
+    // 3. API of this component, composed out of the imported functions
     return {
       newTodo,
       todos,
@@ -71,6 +71,12 @@ export default {
       // save, // future use
       // clear // future use
     }
+
+    // 4. Shorthand notation. A lot shorter, but less clear what the
+    // exported members are.
+    // return {
+    //   ...useTodos()
+    // }
   }
 }
 </script>

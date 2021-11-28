@@ -49,7 +49,7 @@ export default () => {
 
     // 5...
 
-    // return object, to be consumed by component that import this function
+    // return object, to be consumed by component that imports this function (or 'hook').
     return {
         newTodo,
         todos: state.todos,
