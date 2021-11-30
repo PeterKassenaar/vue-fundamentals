@@ -22,7 +22,7 @@
         data() {
             return {
                 // url of the external api
-                url: 'https://restcountries.eu/rest/v2/all?fields=name;capital;flag;population',
+                url: 'https://restcountries.com/v2/all?fields=name,capital,flag,population',
                 countries: [],
                 errors: []
             }
