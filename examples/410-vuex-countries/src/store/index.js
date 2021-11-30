@@ -6,7 +6,7 @@ Vue.use(Vuex);
 
 import axios from 'axios';
 
-const url = 'https://restcountries.eu/rest/v2/all';
+const url = 'https://restcountries.com/v2/all';
 
 export default new Vuex.Store({
     state: {
@@ -43,6 +43,7 @@ export default new Vuex.Store({
                     context.commit('SET_COUNTRIES', []);
                     context.commit('ADD_ERROR', err);
                 })
+
         },
         clearCountries(context) {
             context.commit('CLEAR_COUNTRIES')
@@ -51,7 +52,7 @@ export default new Vuex.Store({
     getters: {
         // only return the requested country from the store
         getCountry: (state) => (name) => {
-            return state.countries.find(c => c.name === name)
+            return state.countries.find(c => c.name === name);
         }
     }
 })

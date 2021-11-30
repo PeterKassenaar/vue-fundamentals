@@ -1,6 +1,6 @@
 // countries.js - vuex store module on countries via REST API
 import axios from 'axios';
-const url = 'https://restcountries.eu/rest/v2/all';
+const url = 'https://restcountries.com/v2/all';
 
 export default {
 	namespaced:true,
