@@ -29,7 +29,7 @@
         name: "ApiSearchCountry",
         data() {
             return {
-                url: 'https://restcountries.eu/rest/v2/name/',
+                url: 'https://restcountries.com/v2/name/',
                 countries:[],
                 countryName: ''
             }

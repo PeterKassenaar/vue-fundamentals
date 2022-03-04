@@ -38,7 +38,7 @@
         data() {
             return {
                 // url of the external api
-                url: 'https://restcountries.eu/rest/v2/name/',
+                url: 'https://restcountries.com/v2/name/',
                 country:null,
                 name: '',
                 errors: []
