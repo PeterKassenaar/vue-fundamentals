@@ -1,6 +1,7 @@
 <template>
+<!--  We render this CountryDetail component *inside* a Vue Card. The various-->
+<!--  slots in the Vue Card are used-->
   <VueCard>
-
     <h2 slot="card-title">{{ country.name }}</h2>
     <img slot="card-photo"
          :src="getImgUrl(country.img)"
@@ -20,6 +21,7 @@
         <span class="badge badge-warning badge-pill">On Sale!</span>
       </li>
     </ul>
+    <button slot="card-btn">More info</button>
   </VueCard>
 </template>
 
@@ -38,7 +40,7 @@ export default {
   },
   methods: {
     getImgUrl(img) {
-      return require('../assets/countries/' + img);
+      return require('@/assets/countries/' + img);
     }
   },
   computed: {
