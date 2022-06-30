@@ -27,7 +27,7 @@
     export default class VacationPicker extends Vue {
         // class properties, typed according to model
         public countries: Country[] = data.countries;
-        public currentCountry: Country | null = null; // correct, using the Union Type?
+        public currentCountry!: Country ; // correct, using the Union Type?
 
         public showCountry(country: Country): void {
             this.currentCountry = country;
