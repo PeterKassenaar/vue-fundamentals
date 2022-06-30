@@ -2,11 +2,8 @@
     <div class="">
         <h1>{{ header }}</h1>
         <ul class="list-group">
-            <li class="list-group-item" v-for="country in data.countries">
-                <span :id="country.id"
-                     :title="country.details">
-                    {{country.name}}
-                </span>
+            <li class="list-group-item" v-for="country in data.countries">               
+                 {{country.name}}
             </li>
         </ul>
         <!--**********************-->
