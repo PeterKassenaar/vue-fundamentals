@@ -5,7 +5,10 @@ example code on the training Vue Fundamentals.
 - This repository is an addendum to the course Vue Fundamentals by internationally acclaimed trainer Peter Kassenaar.
 - Code examples are in the `examples` folder.
 - Every example is a mini project. This means you have to run `npm install` and `npm run serve` in every folder (This is *not* a monorepo).
-- Projects are created with `@vue/cli@3.2.1` and are using Vue version `2.5.17`, unless otherwise noted.  
+- Projects are created with `@vue/cli@3.2.1` and are using Vue version `2.5.17`, unless otherwise noted.
+
+## Running scripts in Terminal in VS Code?
+- Make sure you have running scripts enabled, by (one time) entering `Set-ExecutionPolicy –ExecutionPolicy RemoteSigned` in your terminal window.
 
 ## Useful Links
 - Write your own componentents/plugins for Vue-cli: https://www.youtube.com/watch?v=WH_zrZpMtCE
