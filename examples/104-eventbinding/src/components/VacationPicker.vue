@@ -40,11 +40,11 @@ export default {
   methods: {
     // shorthand notation:
     increase() {
-      console.log("The counter is increased: ", this.counter++);
+      console.log("The counter is increased");
       this.counter++;
     },
     decrease() {
-      console.log("The counter is decreased: ", this.counter--);
+      console.log("The counter is decreased");
       this.counter--;
     },
     logCity(countryName) {
