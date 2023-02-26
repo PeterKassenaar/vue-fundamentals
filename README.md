@@ -27,4 +27,4 @@ example code on the training Vue Fundamentals.
 ## Book a training?
 Questions? Want to book a training on your own or with colleagues from your company? See the calendar at https://www.kassenaar.com for details or contact me at info@kassenaar.com.
 
-Copyright (C) 2019 - 2021 - www.vuetraining.nl  
+Copyright (C) 2019 - 2023 - www.vuetraining.nl  
