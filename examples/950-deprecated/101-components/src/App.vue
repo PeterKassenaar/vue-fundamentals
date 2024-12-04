@@ -4,7 +4,7 @@
             <!-- Global component-->
             <ComponentA/>
         </h3>
-        <img alt="Vue logo" src="./assets/logo.png">
+        <img alt="Vue logo" src="assets/logo.png">
         <HelloWorld msg="Welcome to Your Vue.js App" name="Peter"/>
         <h3>
             Single File Component inserted here:
