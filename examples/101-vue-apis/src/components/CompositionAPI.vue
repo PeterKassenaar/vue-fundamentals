@@ -9,9 +9,13 @@
 // Composition API functions.
 //
 // For TypeScript, you will find <script setup lang="ts"> on top of the component
+
 import {ref} from 'vue';
 
+// reactive state
 const count = ref(0)
+
+// function to mutate state and trigger updates
 const increment = () => {
   count.value++;
 }
