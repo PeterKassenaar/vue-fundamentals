@@ -1,95 +1,70 @@
 <template>
-    <div class="">
-        <h1>{{ header }}</h1>
-        <div class="row">
-            <div class="col-6">
-                <ul class="list-group">
-                    <li @click="selectCountry(country)"
-                        class="list-group-item" v-for="country in data.countries" :key="country.id">
+  <h1>{{ header }}</h1>
+  <div class="row">
+    <div class="col-6">
+      <ul class="list-group">
+        <li @click="selectCountry(country.id)"
+            class="list-group-item"
+            v-for="country in data.countries"
+            :key="country.id">
                 <span :id="country.id"
                       :title="country.details">
-                    {{ country.id }} - {{country.name}}
+                    {{ country.id }} - {{ country.name }}
                 </span>
-                    </li>
-                </ul>
-            </div>
-            <div class="col-6">
-                <h2>Selected:</h2>
-                <ul class="list-group">
-                    <li class="list-group-item">{{ selectedCountry.id}}</li>
-                    <li class="list-group-item">{{ selectedCountry.name}}</li>
-                    <li class="list-group-item">{{ selectedCountry.capital}}</li>
-                    <li class="list-group-item">
-                        <img :src="getImgUrl(selectedCountry.img)"
-                             :alt="selectedCountry.img"
-                             class="img-fluid" >
-                    </li>
-
-                    <li class="list-group-item">{{ selectedCountry.details}}</li>
-                    <li class="list-group-item" v-if="isExpensive">
-                        <span class="badge badge-danger badge-pill">Expensive!</span>
-                    </li>
-                    <li class="list-group-item" v-if="isOnSale">
-                        <span class="badge badge-warning badge-pill">On Sale!</span>
-                    </li>
-                </ul>
-            </div>
-        </div>
-        <hr>
+        </li>
+      </ul>
+      <CatPics />
     </div>
+    <div class="col-6" v-if="currentCountry">
+      <h2>Selected:</h2>
+      <ul class="list-group">
+        <li class="list-group-item">{{ currentCountry.id }}</li>
+        <li class="list-group-item">{{ currentCountry.name }}</li>
+        <li class="list-group-item">{{ currentCountry.capital }}</li>
+        <li class="list-group-item">{{ currentCountry.details }}</li>
+<!--        Binding an image-->
+        <li class="list-group-item">
+          <img :src="imgUrl" :alt="'image of ' + currentCountry.name" class="img-fluid">
+        </li>
+        <li class="list-group-item" v-if="isExpensive">
+          <span class="badge bg-danger rounded-pill">Expensive!</span>
+        </li>
+
+      </ul>
+    </div>
+  </div>
 </template>
 
-<script>
-	// import the country data
-	import data from '../data/data';
+<script setup>
+import {computed, ref} from "vue";
+// import the country countryData
+import countryData from '@/data/CountryData';
+import CatPics from "@/components/CatPics.vue";
 
-	export default {
-		name: 'VacationPicker',
-		data() {
-			return {
-				// make data available in app.
-                // This is shorthand notation for 'data : data'
-				data,
-				header: 'Pick your next vacation',
-				counter: 0,
-				selectedCountryIndex: 0
-			}
-		},
-		methods: {
-			selectCountry(country) {
-				this.selectedCountryIndex = this.data.countries.indexOf(country);
-			},
-            getImgUrl(img){
-				// WebPack function require() - https://vue-loader.vuejs.org/guide/asset-url.html#asset-url-handling
-				console.log(img);
-				return require('../assets/countries/' + img);
-            }
-		},
-		computed: {
-			selectedCountry() {
-				return {
-					// longhand notation: annotate every property
-					// id: this.data.countries[this.selectedCountryIndex].id,
-					// name: this.data.countries[this.selectedCountryIndex].name,
-					// capital: this.data.countries[this.selectedCountryIndex].capital,
-					// cost: this.data.countries[this.selectedCountryIndex].cost,
-					// details: this.data.countries[this.selectedCountryIndex].details,
-					// img: this.data.countries[this.selectedCountryIndex].img
+// create variables
+const header = 'Pick your next vacation';
+const data = countryData;
+const currentCountryId = ref(0);
 
-					// shorthand notation: use the spread operator (=more elegant & scalable)
-					...this.data.countries[this.selectedCountryIndex]
-				}
-			},
-			isExpensive() {
-				return this.data.countries[this.selectedCountryIndex].cost > 4000;
-			},
-			isOnSale() {
-				return this.data.countries[this.selectedCountryIndex].cost < 1000;
-			}
-		}
-	}
+// Automatically calculate current country, based on Id
+const currentCountry = computed(()=>{
+  return data.countries.find(c => c.id === currentCountryId.value)
+})
+
+// Automatically calculate if a destination is expensive
+const isExpensive = computed(() => {
+  return currentCountry.value.cost > 4000;
+});
+
+// A computed property that returns the URL to the image for currentCountry.
+const imgUrl = computed(() =>{
+  return new URL(`/src/assets/countries/${currentCountry.value.img}`, import.meta.url).href;
+})
+
+
+// Update the Id when the user clicks a country
+const selectCountry = id => {
+  currentCountryId.value = id;
+}
+
 </script>
-
-<style scoped>
-
-</style>
