@@ -9,13 +9,23 @@
 // Composition API functions.
 //
 // For TypeScript, you will find <script setup lang="ts"> on top of the component
+import {ref} from 'vue';
+
+const count = ref(0)
+const increment = () => {
+  count.value++;
+}
+// or, in classical notation:
+// function increment(){
+//   count.value++;
+// }
 </script>
 
 <template>
-<div>
-  <h1>This is a component, using the <code>Composition API</code></h1>
-  <p>Please look at the source code</p>
-</div>
+  <div>
+    <h1>This is a component, using the <code>Composition API</code></h1>
+    <p>Please look at the source code</p>
+  </div>
 </template>
 
 <style scoped>
