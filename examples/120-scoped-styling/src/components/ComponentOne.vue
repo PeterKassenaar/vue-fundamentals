@@ -9,13 +9,7 @@
     </div>
 </template>
 
-<script>
-	export default {
-		name: "ComponentOne",
-	}
-</script>
-
-<!-- This component uses a scoped style. This means that the style is only visible-->
+<!-- This component uses a scoped style. This means that the style is ONLY visible-->
 <!-- inside this component. Other components can have the same style name, without naming-->
 <!-- collisions. -->
 <!-- It is considered best practice to only use scoped styles inside components. -->

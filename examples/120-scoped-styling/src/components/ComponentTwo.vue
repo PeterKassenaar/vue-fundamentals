@@ -9,12 +9,6 @@
     </div>
 </template>
 
-<script>
-	export default {
-		name: "ComponentTwo"
-	}
-</script>
-
 <style scoped>
     .heading {
         font-size: 36px;
