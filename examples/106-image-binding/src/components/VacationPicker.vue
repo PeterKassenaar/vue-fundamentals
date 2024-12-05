@@ -13,7 +13,6 @@
                 </span>
         </li>
       </ul>
-      <CatPics />
     </div>
     <div class="col-6" v-if="currentCountry">
       <h2>Selected:</h2>
@@ -22,7 +21,7 @@
         <li class="list-group-item">{{ currentCountry.name }}</li>
         <li class="list-group-item">{{ currentCountry.capital }}</li>
         <li class="list-group-item">{{ currentCountry.details }}</li>
-<!--        Binding an image-->
+        <!--        Binding an image-->
         <li class="list-group-item">
           <img :src="imgUrl" :alt="'image of ' + currentCountry.name" class="img-fluid">
         </li>
@@ -39,7 +38,6 @@
 import {computed, ref} from "vue";
 // import the country countryData
 import countryData from '@/data/CountryData';
-import CatPics from "@/components/CatPics.vue";
 
 // create variables
 const header = 'Pick your next vacation';
@@ -47,7 +45,7 @@ const data = countryData;
 const currentCountryId = ref(0);
 
 // Automatically calculate current country, based on Id
-const currentCountry = computed(()=>{
+const currentCountry = computed(() => {
   return data.countries.find(c => c.id === currentCountryId.value)
 })
 
@@ -57,7 +55,7 @@ const isExpensive = computed(() => {
 });
 
 // A computed property that returns the URL to the image for currentCountry.
-const imgUrl = computed(() =>{
+const imgUrl = computed(() => {
   return new URL(`/src/assets/countries/${currentCountry.value.img}`, import.meta.url).href;
 })
 
