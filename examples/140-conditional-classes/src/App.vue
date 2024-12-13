@@ -1,24 +1,12 @@
+<script setup>
+import VacationPicker from "@/components/VacationPicker.vue";
+import ConditionalClass from "@/components/ConditionalClass.vue";
+</script>
+
 <template>
   <div id="app" class="container">
-    <h1>Conditionally applying classes</h1>
-    <VacationList/>
+    <VacationPicker/>
+    <!--    Remove comment to see Conditional Classes working-->
     <!--    <ConditionalClass />-->
-    <!--    <VacationListSelect/>-->
   </div>
 </template>
-
-<script>
-
-import VacationList from "./components/VacationList";
-// import ConditionalClass from "@/components/ConditionalClass";
-// import VacationListSelect from "@/components/VacationListSelect";
-
-export default {
-  name      : 'app',
-  components: {
-    VacationList,
-    // ConditionalClass,
-    // VacationListSelect,
-  }
-}
-</script>
