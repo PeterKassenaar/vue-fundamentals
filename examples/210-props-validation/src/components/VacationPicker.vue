@@ -1,80 +1,58 @@
 <template>
-  <div class="">
-    <h1>
-      <img src="../assets/logo.png" alt="vue logo" style="width:80px"/>
-      Vue vacation picker</h1>
-    <div class="row">
-      <div class="col-6">
-        <div class="alert alert-warning text-center">
-          <h1>{{ country.name }}</h1>
-          <h2>Capital: {{ country.capital }}
-            <span v-if="isOnSale" class="badge badge-light">Sale!</span>
-            <span v-if="isExpensive" class="badge badge-danger">(expensive)</span>
-          </h2>
-        </div>
-        <button @click="prevCountry()" class="btn btn-success"> &lt;&lt; Back</button>
-        <button @click="nextCountry()" class="btn btn-success">Forward &gt;&gt;</button>
-        <button @click="showDetails = !showDetails" class="btn btn-primary">
-          <span v-if="showDetails">Hide details</span>
-          <span v-if="!showDetails">Show details</span>
-        </button>
+  <h1>{{ header }}</h1>
+  <div class="row">
+    <div class="col-6">
+      <div class="alert alert-warning text-center">
+        <h1>{{ currentCountry.name }}</h1>
+        <h2>Capital: {{ currentCountry.capital }}</h2>
       </div>
-      <div class="col-6">
-        <CountryDetail v-if="showDetails"
-                       :id="country.id"
-                       :name="country.name"
-                       :country="country"/>
-      </div>
+      <button @click="prevCountry()" class="btn btn-success"> &lt;&lt; Back</button>
+      <button @click="nextCountry()" class="btn btn-success">Forward &gt;&gt;</button>
+      <button @click="showDetails = !showDetails" class="btn btn-primary">
+        <span v-if="showDetails">Hide details</span>
+        <span v-if="!showDetails">Show details</span>
+      </button>
     </div>
-    <hr>
-    <div class="small text-center">Copyright (C) 2020-</div>
+    <div class="col-6">
+      <CountryDetail  v-if="showDetails"
+                      :name="currentCountry.name"
+                      :id="currentCountry.id"
+                      :country="currentCountry"/>
+    </div>
   </div>
 </template>
 
-<script>
-// import the country data
-import data from '../data/data';
-import CountryDetail from "./CountryDetail";
+<script setup>
+import {computed, ref} from "vue";
+// import the country countryData
+import countryData from '@/data/CountryData';
 
-export default {
-  name: 'VacationPicker',
-  components: {CountryDetail},
-  //**************** Data
-  data() {
-    return {
-      data,
-      showDetails: false,
-      currentCountryIndex: 0
-    }
-  },
-  //**************** Methods
-  methods: {
-    prevCountry: function () {
-      this.currentCountryIndex--;
-      if (this.currentCountryIndex < 0) {
-        this.currentCountryIndex = this.data.countries.length - 1;
-      }
-    },
-    nextCountry: function () {
-      this.currentCountryIndex++;
-      if (this.currentCountryIndex > this.data.countries.length - 1) {
-        this.currentCountryIndex = 0;
-      }
-    }
-  },
-  //**************** Computed properties
-  computed: {
-    country() {
-      return {
-        ...this.data.countries[this.currentCountryIndex]
-      }
-    },
-    isExpensive() {
-      return this.country.cost > 4000;
-    },
-    isOnSale() {
-      return this.country.cost < 1000;
-    }
+// import the child component receiving the country details
+import CountryDetail from "@/components/CountryDetail.vue";
+
+// create variables
+const header = 'Pick your next vacation';
+const data = countryData;
+const showDetails = ref(false);
+const currentCountryId = ref(0);
+
+// Automatically calculate current country, based on Id
+const currentCountry = computed(() => {
+  return data.countries.find(c => c.id === currentCountryId.value) || data.countries[0] // fallback property for first load
+})
+
+// Go to the previous country
+const prevCountry = () => {
+  currentCountryId.value--;
+  if (currentCountryId.value <= 0) {
+    currentCountryId.value = data.countries.slice(-1)[0].id; // get the id of last country
+  }
+}
+// Go to the next country
+const nextCountry = () => {
+  currentCountryId.value++;
+  if (currentCountryId.value > data.countries.length) {
+    currentCountryId.value = data.countries[0].id; // set id equal to first country
   }
 }
 </script>
