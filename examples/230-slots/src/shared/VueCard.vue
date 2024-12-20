@@ -1,6 +1,6 @@
 <template>
-<!--  The 'Skeleton' and anatomy of the Vue Card. The styles-->
-<!--  below make sure that every component which uses this Vue Card renders the same way-->
+  <!--  The 'Skeleton' and anatomy of the Vue Card. The styles-->
+  <!--  below make sure that every component which uses this Vue Card renders the same way-->
   <div class="card-div">
     <div class="card-photo">
       <slot name="card-photo"></slot>
@@ -18,10 +18,8 @@
   </div>
 </template>
 
-<script>
-export default {
-  name: "VueCard"
-}
+<script setup>
+
 </script>
 
 <style scoped>
