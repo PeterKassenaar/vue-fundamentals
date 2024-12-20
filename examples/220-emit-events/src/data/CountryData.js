@@ -1,6 +1,6 @@
-// data.js - holding an array of country/capital data.
+// countryDatatryData.js - holding an array of country/capital countryData.
 // This of course will come from a real db in the future.
-const data = {
+const countryData = {
 	countries: [
 		{
 			id: 1,
@@ -58,4 +58,4 @@ const data = {
 		},
 	]
 };
-export default data;
+export default countryData;
