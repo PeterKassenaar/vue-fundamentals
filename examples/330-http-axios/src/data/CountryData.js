@@ -1,6 +1,6 @@
-// data.js - holding an array of country/capital data.
+// countryDatatryData.js - holding an array of country/capital countryData.
 // This of course will come from a real db in the future.
-const data = {
+const countryData = {
 	countries: [
 		{
 			id: 1,
@@ -8,7 +8,8 @@ const data = {
 			capital: 'Washington',
 			cost: 1250,
 			details: 'United States are among the most visited country in the world.',
-			img: 'washington.jpg'
+			img: 'washington.jpg',
+			rating: 0
 		},
 		{
 			id: 2,
@@ -16,7 +17,8 @@ const data = {
 			capital: 'Amsterdam',
 			cost: 795,
 			details: 'The capital of the Netherlands, Amsterdam, is over 1000 years old.',
-			img: 'amsterdam.jpg'
+			img: 'amsterdam.jpg',
+			rating: 0
 		},
 		{
 			id: 3,
@@ -24,7 +26,8 @@ const data = {
 			capital: 'Brussels',
 			cost: 645,
 			details: 'In Belgium they actually speak three different official languages: Flemmish, French and German.',
-			img: 'brussels.jpg'
+			img: 'brussels.jpg',
+			rating: 0
 		},
 		{
 			id: 4,
@@ -32,7 +35,8 @@ const data = {
 			capital: 'Tokyo',
 			cost: 2895,
 			details: 'Japan was a closed community for thousands of years. Its capital, Tokyo, is lit up by thousands of neon light signs at night',
-			img: 'tokyo.jpg'
+			img: 'tokyo.jpg',
+			rating: 0
 		},
 		{
 			id: 5,
@@ -40,7 +44,8 @@ const data = {
 			capital: 'Brasilia',
 			cost: 4500,
 			details: 'Brazil is the home of the Amazon river and holds the largest rainforest ecosystem in the world. Rio de Janairo was host of the 2016 summer Olympic games.',
-			img: 'brazil.jpg'
+			img: 'brazil.jpg',
+			rating: 0
 		},
 		{
 			id: 6,
@@ -48,8 +53,9 @@ const data = {
 			capital: 'Sydney',
 			cost: 8500,
 			details: 'One of the biggest attractions of Australia is Uluru, which lies approximately in the middle of the continent. The iconic Sydney Opera house and Sydney Harbour bridge attract millions of visitors each year.',
-			img: 'sydney.jpg'
+			img: 'sydney.jpg',
+			rating: 0
 		},
 	]
 };
-export default data;
+export default countryData;

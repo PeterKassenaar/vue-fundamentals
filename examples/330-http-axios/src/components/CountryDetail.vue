@@ -1,88 +1,73 @@
 <template>
-    <div>
-        <h2>Country Details</h2>
-        <div v-if="country">
-            <ul class="list-group">
-                <li class="list-group-item">{{ country.id}}</li>
-                <li class="list-group-item">{{ country.name}}</li>
-                <li class="list-group-item">{{ country.capital}}</li>
-                <li class="list-group-item">
-                    <img :src="getImgUrl(country.img)"
-                         :alt="country.img"
-                         class="img-fluid">
-                </li>
-                <li class="list-group-item">{{ country.details}}</li>
-                <li class="list-group-item" v-if="isExpensive">
-                    <span class="badge badge-danger badge-pill">Expensive!</span>
-                </li>
-                <li class="list-group-item" v-if="isOnSale">
-                    <span class="badge badge-warning badge-pill">On Sale!</span>
-                </li>
-            </ul>
-        </div>
+  <div>
+    <h3>Country id : {{ id }}</h3>
+    <div v-if="country">
+      <h2>{{ country.name }}</h2>
+      <ul class="list-group">
+        <li class="list-group-item">{{ country.id }}</li>
+        <li class="list-group-item">{{ country.name }}</li>
+        <li class="list-group-item">{{ country.capital }}</li>
+        <li class="list-group-item">
+          <img :src="imgUrl"
+               :alt="country.value?.img || 'Image of ' + country.name"
+               class="img-fluid">
+        </li>
+        <li class="list-group-item">{{ country.details }}</li>
+        <li class="list-group-item" v-if="isExpensive">
+          <span class="badge bg-danger badge-pill">Expensive!</span>
+        </li>
+        <li class="list-group-item" v-if="isOnSale">
+          <span class="badge bg-warning badge-pill">On Sale!</span>
+        </li>
+      </ul>
     </div>
+  </div>
 </template>
 
-<script>
-	// import the country data - later on we're going to fetch data from an API
-	import data from '../data/data';
 
-	export default {
-		name: "CountryDetail",
-		created() {
-			// Set the simple parameters
-			this.id = this.$route.params.id;
+<script setup>
+import {computed, ref, watch} from "vue";
+import {useRoute} from "vue-router";
+import countryData from "@/data/CountryData.js";
 
-			// fetch the correct country from the loaded data
-			this.country = this.data.countries.find(c => c.id === +this.id);
-		},
-		data() {
-			return {
-				data,
-				country: null
-			}
-		},
-		// Update nested view, Method 2 - Create a watcher.
-		// The component is updated on route change.
-		watch: {
-			// '$route'(to, from) {
-			// 	console.log(to, from); // logging, so you can see what's going on
-			// 	this.id = to.params.id;
-			// 	this.country = this.data.countries.find(c => c.id === +this.id);
-			// }
-		},
-		// Update nested view, Method 3 - use the beforeRouteUpdate() method,
-        // introduced in Vue 2.2.
-		// beforeRouteUpdate(to, from, next) {
-		// 	this.id = to.params.id;
-		// 	this.country = this.data.countries.find(c => c.id === +this.id);
-		// 	next();
-		// },
-		methods: {
-			getImgUrl(img) {
-				return require('../assets/countries/' + img);
-			},
-			// updateContent(id) {
-			// 	console.log('in updatecontent....');
-			// 	this.id = id;
-			// 	if (this.id) {
-			// 		this.country = this.data.countries.find(c => c.id === +id)
-			// 	} else {
-			// 		this.country = {name: 'Unknown...'}
-			// 	}
-			// }
-		},
-		computed: {
-			isExpensive() {
-				return this.country.cost > 4000;
-			},
-			isOnSale() {
-				return this.country.cost < 1000;
-			}
-		}
-	}
+// using the current URL with useRoute() composable and extracting the parameters.
+const route = useRoute();
+
+const id = ref(parseInt(route.params.id, 10)); // convert string from URL to number
+
+// Initial country, based on route parameters
+const country = ref(countryData.countries.find((country) => country.id === id));
+
+// Update country once the url/route changes
+watch(
+    () => route.params.id,
+    (newId) =>{
+      console.log('load newId:: ', newId);
+      id.value = +newId; // shortcut for parseInt(newId, 10);
+      country.value = countryData.countries.find((country) => country.id === id.value);
+    }
+)
+
+// Computed properties.
+// Automatically calculate if a destination is expensive
+const isExpensive = computed(() => {
+  return country.cost > 4000;
+});
+
+// Automatically calculate if a destination is on Sale
+const isOnSale = computed(() => {
+  return country.cost < 1000;
+});
+
+// A computed property that returns the URL to the image for currentCountry.
+// Country is now inside a ref(), we therefore need to get country.value.img.
+// A fallback empty string is provided if the image is not found.
+const imgUrl = computed(() => {
+  // check if country exists and return the 'img' property from the 'ref()', otherwise
+  // return an empty string
+  return country.value
+    ? new URL(`/src/assets/countries/${country.value.img}`, import.meta.url).href
+    : '';
+
+})
 </script>
-
-<style scoped>
-
-</style>
