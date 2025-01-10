@@ -36,3 +36,9 @@ const showCountry = (country) => {
 }
 
 </script>
+
+<style scoped>
+li {
+  cursor: pointer;
+}
+</style>
