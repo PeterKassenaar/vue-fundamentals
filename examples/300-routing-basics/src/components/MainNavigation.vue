@@ -4,7 +4,7 @@
       <!--Main navigation - Bootstrap Navbar, see https://getbootstrap.com/docs/4.0/components/navbar/ for details -->
       <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <router-link class="navbar-brand" exact :to="{name: 'home'}">
-          <img src="../assets/logo.png" alt="Vue Logo">
+          <img src="../assets/logo.png" class="transparent" alt="Vue Logo">
         </router-link>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
@@ -38,4 +38,9 @@
 img {
   max-width: 80px;
 }
+/* Automatic assignment of this class by Vue, based on router state */
+/* .router-link-active{
+  background-color: cornsilk;
+  color: black;
+} */
 </style>

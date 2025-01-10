@@ -10,60 +10,51 @@
         <li class="list-group-item">{{ country.name }}</li>
         <li class="list-group-item">{{ country.capital }}</li>
         <li class="list-group-item">
-          <img :src="getImgUrl(country.img)"
+          <img :src="imgUrl"
                :alt="country.img"
                class="img-fluid">
         </li>
         <li class="list-group-item">{{ country.details }}</li>
         <li class="list-group-item" v-if="isExpensive">
-          <span class="badge badge-danger badge-pill">Expensive!</span>
+          <span class="badge bg-danger badge-pill">Expensive!</span>
         </li>
         <li class="list-group-item" v-if="isOnSale">
-          <span class="badge badge-warning badge-pill">On Sale!</span>
+          <span class="badge bg-warning badge-pill">On Sale!</span>
         </li>
       </ul>
     </div>
   </div>
 </template>
 
-<script>
-// import the country data - later on we're going to fetch data from an API
-import data from '../data/data';
 
-export default {
-  name: "CountryDetail",
-  created() {
-    // Set the simple parameters
-    this.id = this.$route.params.id;
-    this.name = this.$route.params.name;
+<script setup>
+import {computed } from "vue";
+import {useRoute, useRouter} from "vue-router";
+import countryData from "@/data/CountryData.js";
 
-    // fetch the correct country from the loaded data
-    // this.country = this.data.countries.find(c => c.id === +this.id);
-  },
-  // ****************
-  // existing methods/properties below...
-  // ****************
-  data() {
-    return {
-      data
-    }
-  },
-  methods: {
-    getImgUrl(img) {
-      return require('../assets/countries/' + img);
-    }
-  },
-  computed: {
-    isExpensive() {
-      return this.country.cost > 4000;
-    },
-    isOnSale() {
-      return this.country.cost < 1000;
-    }
-  }
-}
+// using the current URL with useRoute() composable and extracting the parameters.
+const route = useRoute();
+const router = useRouter()
+
+const id = parseInt(route.params.id, 10); // convert string from URL to number
+const name = route.params.name;
+
+// get correct country, based on route parameters
+const country = countryData.countries.find((country) => country.id === id);
+
+// Computed properties.
+// Automatically calculate if a destination is expensive
+const isExpensive = computed(() => {
+  return country.cost > 4000;
+});
+
+// Automatically calculate if a destination is on Sale
+const isOnSale = computed(() => {
+  return country.cost < 1000;
+});
+
+// A computed property that returns the URL to the image for currentCountry.
+const imgUrl = computed(() => {
+  return new URL(`/src/assets/countries/${country.img}`, import.meta.url).href;
+})
 </script>
-
-<style scoped>
-
-</style>

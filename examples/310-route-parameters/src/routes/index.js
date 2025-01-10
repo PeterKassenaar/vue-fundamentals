@@ -25,6 +25,11 @@ export const routes = [
         component: UpdateCountry
     },
     {
+        path: '/detail/:id/:name',
+        name: 'detail',
+        component: () => import('@/components/CountryDetail.vue'),
+    },
+    {
         // catch all route
         path: '/:pathMatch(.*)*',
         name: '404',

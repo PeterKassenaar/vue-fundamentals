@@ -1,17 +1,21 @@
-// main.js
-import Vue from 'vue';
-import App from './App.vue';
+import {createApp} from 'vue'
+import App from './App.vue'
 
-// Bootstrap styling
+// 0. Bootstrap styling
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-// import router stuff
-import router from './router'
+// 1. importing the router stuff
+import {createRouter, createWebHistory} from "vue-router";
+import {routes} from "@/routes/index.js";
 
-Vue.config.productionTip = false;
+// 2. creating the router
+const router = createRouter({
+    history: createWebHistory(),
+    routes
+})
 
-new Vue({
-	render: h => h(App),
-	router,
-}).$mount('#app');
+// 3. mounting the router to App
+createApp(App)
+    .use(router) // 'use' before 'mount'
+    .mount('#app')
