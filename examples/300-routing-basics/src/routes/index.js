@@ -1,10 +1,12 @@
 // router/index.js
 // import the required components
 import VacationPicker from "@/components/VacationPicker.vue";
-import AddCountry from "@/components/AddCountry.vue";
 import UpdateCountry from "@/components/UpdateCountry.vue";
 import CountryDetail from "@/components/CountryDetail.vue";
 import FileNotFound from "@/components/FileNotFound.vue";
+
+// alternative for lazy loading
+// const AddCountry = () => import('../components/AddCountry.vue')
 
 export const routes = [
     // define all routes here....
@@ -16,7 +18,7 @@ export const routes = [
     {
         path: '/add',
         name: 'add',
-        component: AddCountry
+        component: () => import('@/components/AddCountry.vue'), // lazy loaded component
     },
     {
         path: '/update',

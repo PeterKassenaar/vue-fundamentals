@@ -1,21 +1,21 @@
 import {createApp} from 'vue'
 import App from './App.vue'
 
-// Bootstrap styling
+// 0. Bootstrap styling
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-// importing the router stuff
+// 1. importing the router stuff
 import {createRouter, createWebHistory} from "vue-router";
 import {routes} from "@/routes/index.js";
 
-// creating the router
+// 2. creating the router
 const router = createRouter({
     history: createWebHistory(),
     routes
 })
 
-// mounting the router to App
+// 3. mounting the router to App
 createApp(App)
     .use(router) // 'use' before 'mount'
     .mount('#app')
