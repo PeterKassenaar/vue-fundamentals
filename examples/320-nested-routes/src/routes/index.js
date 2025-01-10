@@ -20,17 +20,20 @@ export const routes = [
                 name: 'detail',
                 component:()=>  import('@/components/CountryDetail.vue')
             },
-        ]
+        ],
+        meta: { title: 'Home' }
     },
     {
         path: '/add',
         name: 'add',
         component: () => import('@/components/AddCountry.vue'), // lazy loaded component
+        meta: { title: 'Add' }
     },
     {
         path: '/update',
         name: 'update',
-        component: UpdateCountry
+        component: UpdateCountry,
+        meta: { title: 'Update' }
     },
     {
         // catch all route
