@@ -3,11 +3,11 @@ import Vue from 'vue'
 import Router from 'vue-router'
 
 // import the required components
-import VacationPicker from "../components/VacationPicker";
-import CountryDetail from "../components/CountryDetail";
-import ApiVuexComponent from "../components/ApiVuexComponent";
-import ApiVuexDetail from "../components/ApiVuexDetail";
-import CounterComponent from "../components/CounterComponent";
+import VacationPicker from "../components/VacationPicker.vue";
+import CountryDetail from "../components/CountryDetail.vue";
+import ApiVuexComponent from "../components/ApiVuexComponent.vue";
+import ApiVuexDetail from "../components/ApiVuexDetail.vue";
+import CounterComponent from "../components/CounterComponent.vue";
 //
 Vue.use(Router);
 

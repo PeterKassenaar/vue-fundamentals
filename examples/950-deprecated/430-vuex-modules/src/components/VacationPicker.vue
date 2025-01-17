@@ -13,8 +13,6 @@
                 </span>
                     </li>
                 </ul>
-                <hr>
-                <ShoppingCart />
             </div>
             <div class="col-md-6">
                 <!--The Nested router view here-->
@@ -24,7 +22,7 @@
         <div class="row">
             <div class="col">
                 <hr>
-
+                <ShoppingCart></ShoppingCart>
             </div>
         </div>
     </div>
@@ -33,7 +31,7 @@
 <script>
     // import the country data
     import data from '../data/data';
-    import ShoppingCart from "./ShoppingCart";
+    import ShoppingCart from "./ShoppingCart.vue";
 
     export default {
         name: 'VacationPicker',
