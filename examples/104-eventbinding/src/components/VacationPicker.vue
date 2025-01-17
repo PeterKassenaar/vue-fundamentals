@@ -33,13 +33,22 @@ const data = countryData;
 const counter = ref(0);
 
 // classical notation
-const increase = () => {
+function increase() {
   counter.value++;
 }
 
-const decrease = () => {
+function decrease() {
   counter.value--;
 }
+
+// modern notation
+// const increase = () => {
+//   counter.value++;
+// }
+//
+// const decrease = () => {
+//   counter.value--;
+// }
 const logCity = countryName => {
   console.log({countryName});
 }
