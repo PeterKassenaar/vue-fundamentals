@@ -43,6 +43,11 @@ const header = 'Pick your next vacation';
 const data = countryData;
 const currentCountryId = ref(0);
 
+// Update the Id when the user clicks a country
+const selectCountry = id => {
+  currentCountryId.value = id;
+}
+
 // Automatically calculate current country, based on Id
 const currentCountry = computed(()=>{
   return data.countries.find(c => c.id === currentCountryId.value)
@@ -54,9 +59,4 @@ const isExpensive = computed(() => {
 });
 // Workshop: create a computed property for the isOnSale property of this component
 
-
-// Update the Id when the user clicks a country
-const selectCountry = id => {
-  currentCountryId.value = id;
-}
 </script>
