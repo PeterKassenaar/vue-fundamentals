@@ -17,7 +17,6 @@
     <div class="col-6">
       <h2>Selected:</h2>
       <ul class="list-group">
-        <li class="list-group-item"><span class="text-2xl">Price: &euro;{{ currentCountry.cost }}</span></li>
         <li class="list-group-item">{{ currentCountry.name }}</li>
         <li class="list-group-item">{{ currentCountry.capital }}</li>
         <li class="list-group-item">{{ currentCountry.details }}</li>
@@ -28,6 +27,7 @@
         <li class="list-group-item" v-if="isExpensive">
           <span class="badge bg-danger rounded-pill">Expensive!</span>
         </li>
+        <li class="list-group-item"><span class="text-2xl">Visit this country : &euro;{{ currentCountry.cost.toLocaleString() }}</span></li>
         <li class="list-group-item">
           <button class="btn btn-info btn-lg"
                   @click="addToCart(currentCountry)">

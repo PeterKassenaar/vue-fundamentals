@@ -19,7 +19,7 @@ const cart = useCartStore()
     <tbody>
     <tr v-for="(item, index) in cart.getCart">
       <td>{{ item.name }}</td>
-      <td>&euro;{{ item.cost }}</td>
+      <td>&euro;{{ item.cost.toLocaleString() }}</td>
       <td>
         <button class="btn btn-outline-danger btn-sm"
                 @click="cart.removeItemFromCart(item.id)">
@@ -29,7 +29,7 @@ const cart = useCartStore()
     </tr>
     <tr>
       <td>Total</td>
-      <td><strong>&euro;{{ cart.totalPrice }}</strong></td>
+      <td><strong>&euro;{{ cart.totalPrice.toLocaleString() }}</strong></td>
       <td>
         <button class="btn btn-outline-info btn-sm"
                 @click="cart.checkout()">Checkout
