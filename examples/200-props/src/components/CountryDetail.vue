@@ -26,6 +26,7 @@
 // The local country variable is reactive.
 import {computed} from "vue";
 
+// Using ES6 destructuring here: assign the country property to a variable
 const {country} = defineProps({
   country : Object
 })
