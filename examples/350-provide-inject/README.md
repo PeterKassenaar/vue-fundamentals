@@ -1,5 +1,7 @@
 # vue-provide-inject
 
+Official documentation: https://vuejs.org/guide/components/provide-inject.html
+
 This template should help get you started developing with Vue 3 in Vite.
 
 ## Recommended IDE Setup
