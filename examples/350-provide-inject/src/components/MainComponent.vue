@@ -10,7 +10,7 @@ import {provide, ref} from "vue";
 const message = 'Hello World';
 provide('messageProvider', message);
 
-// 2. Providing a complex object, using a string and a function (yes, this looks like how React works with props.)
+// 2. Providing a complex object, using a string and a function (and yes indeed, this looks like how React works with props.)
 // const message = ref('Hello World')
 // const updateMessage = (msg) => {
 //   message.value = msg;

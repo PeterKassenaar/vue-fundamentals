@@ -6,7 +6,8 @@ export const useCountryStore = defineStore("country", () => {
     const countries = ref([]); // State for storing countries
     const loading = ref(false); // loading indicator
     const filterLetter = ref(""); // State for the filter input
-    const url = "https://restcountries.com/v3.1/all"; // no ref() needed, since the url is constant
+    const fields = 'name,capital,population,flags'; // fields to retrieve from the API, see https://restcountries.com/v3.1/all
+    const url = `https://restcountries.com/v3.1/all?fields=${fields}`// no ref() needed, since the url is constant
 
     // Computed property for filtered countries
     const filteredCountries = computed(() => {
@@ -49,6 +50,6 @@ export const useCountryStore = defineStore("country", () => {
         filterLetter,
         filteredCountries,
         fetchCountries,
-        resetCountries, // Expose `fetchCountries` and `restCountries so it can be called explicitly from a component
+        resetCountries, // Expose `fetchCountries` and `restCountries so they can be called explicitly from a component
     };
 });
