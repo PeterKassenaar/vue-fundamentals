@@ -17,7 +17,8 @@
 import axios from 'axios';
 import {onMounted, ref} from "vue";
 
-const url = 'https://restcountries.com/v3.1/all'
+const fields = 'name,capital,population,flags'; // fields to retrieve from the API, see https://restcountries.com/v3.1/all
+const url = `https://restcountries.com/v3.1/all?fields=${fields}`
 const countries = ref([]);
 const errors = ref([]);
 
