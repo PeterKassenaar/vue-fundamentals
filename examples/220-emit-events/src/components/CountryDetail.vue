@@ -2,7 +2,8 @@
   <h2>{{ country.name }}</h2>
   <ul class="list-group">
     <li class="list-group-item">
-      <span class="float-lg-end">
+    {{ country.id }}
+      <span class="float-end">
         <!--        Emitting directly from the template. Not recommended, IMO-->
         <!--        <button @click="$emit('rating', 1)" class="btn btn-success btn-sm">+1</button>-->
         <button @click="setRating(1)" class="btn btn-success btn-sm">+1</button>
