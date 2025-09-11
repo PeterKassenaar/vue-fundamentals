@@ -9,15 +9,15 @@ example code on the training Vue Fundamentals.
 
 ## Running scripts in Terminal in VS Code?
 - Make sure you have running scripts enabled, by (one time) entering `Set-ExecutionPolicy –ExecutionPolicy RemoteSigned` in your terminal window.
+- See for background information on this command: https://superuser.com/questions/106360/how-to-enable-execution-of-powershell-scripts
 
 ## Useful Links
-- Write your own componentents/plugins for Vue-cli: https://www.youtube.com/watch?v=WH_zrZpMtCE
 - Dummy posts, comments and photos via typicode.com: https://jsonplaceholder.typicode.com/
 - Vue Server Side Rendering Guide - https://ssr.vuejs.org/#vue-js-server-side-rendering-guide
 - VueJS Style Guide. Read (and use!) this. https://vuejs.org/v2/style-guide/
 - VueJS Cheat Sheet: https://www.vuemastery.com/vue-cheat-sheet/
 
-## Vue (3) and TypeScript
+## Vue and TypeScript
 - Types vs. Interfaces: https://blog.devgenius.io/using-typescript-object-types-and-intersections-23cc4dbe3b92
 - Article by Todd Motto : https://ultimatecourses.com/blog/typescript-interfaces-vs-types
 - Vue 3 `ref()` vs. `reactive()`: https://www.danvega.dev/blog/2020/02/12/vue3-ref-vs-reactive/
@@ -27,4 +27,4 @@ example code on the training Vue Fundamentals.
 ## Book a training?
 Questions? Want to book a training on your own or with colleagues from your company? See the calendar at https://www.kassenaar.com for details or contact me at info@kassenaar.com.
 
-Copyright (C) 2019 - 2023 - www.vuetraining.nl  
+Copyright (C) 2019 - 2025 - www.vuetraining.nl  
