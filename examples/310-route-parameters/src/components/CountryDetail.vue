@@ -29,12 +29,11 @@
 
 <script setup>
 import {computed } from "vue";
-import {useRoute, useRouter} from "vue-router";
+import {useRoute} from "vue-router";
 import countryData from "@/data/CountryData.js";
 
 // using the current URL with useRoute() composable and extracting the parameters.
 const route = useRoute();
-const router = useRouter()
 
 const id = parseInt(route.params.id, 10); // convert string from URL to number
 const name = route.params.name;
