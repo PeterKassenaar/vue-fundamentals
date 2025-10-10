@@ -14,20 +14,33 @@
 </template>
 
 <script setup>
-import axios from 'axios';
 import {ref} from "vue";
+import axios from "axios";
 
 const fields = 'name,capital,population,flags'; // fields to retrieve from the API, see https://restcountries.com/v3.1/all
 const url = `https://restcountries.com/v3.1/all?fields=${fields}`
 const countries = ref([]);
 const errors = ref([]);
 
+// The actual API call, using axios as an external dependency
 axios.get(url)
     .then(response => countries.value = response.data)
     .catch(error => errors.value.push(error));
 
-// async/await version - results in UI are identical
-// but we have to use the onMounted lifecycle hook in this case
+//**********************************
+// **** ALTERNATIVES ***
+//**********************************
+// 1) fetch version - results in UI are identical
+// fetch(url)
+//     .then(async (response) => {
+//         if (!response.ok) throw new Error(`HTTP ${response.status}`);
+//         const data = await response.json();
+//         countries.value = data;
+//     })
+//     .catch((error) => errors.value.push(error));
+
+// 2) async/await version - results in UI are identical
+// we also have to use the onMounted lifecycle hook in this case
 // onMounted(async () =>{
 //   try {
 //     const response = await axios.get(url)
