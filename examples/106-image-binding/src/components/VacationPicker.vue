@@ -23,7 +23,8 @@
         <li class="list-group-item">{{ currentCountry.details }}</li>
         <!--        Binding an image-->
         <li class="list-group-item">
-          <img :src="imgUrl" :alt="'image of ' + currentCountry.name" class="img-fluid">
+          <img :src="imgUrl" :alt="'image of ' + currentCountry.name"
+               class="img-fluid">
         </li>
         <li class="list-group-item" v-if="isExpensive">
           <span class="badge bg-danger rounded-pill">Expensive!</span>
@@ -56,7 +57,14 @@ const isExpensive = computed(() => {
 
 // A computed property that returns the URL to the image for currentCountry.
 const imgUrl = computed(() => {
+  // 1. Default, robust Vite setup:
   return new URL(`/src/assets/countries/${currentCountry.value.img}`, import.meta.url).href;
+
+  // 2. ALTENATIVE:
+  // Move all images to the `/public/countries` folder and serve from there.
+  // The build tool Vite will leave the `/public/countries` folder untouched and copy stuff to the root
+  // of the build folder. Then we can use relative paths:`
+  // return `/countries/${currentCountry.value.img}`;
 })
 
 
